@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = () => {
     <header 
       id="header"
       className={`fixed w-full z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-aiix-primary/90 backdrop-blur-md' : 'bg-transparent'
+        scrolled ? 'bg-aiix-primary/90 backdrop-blur-md' : ''
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center h-[52px]">
@@ -71,14 +71,14 @@ const Header: React.FC<HeaderProps> = () => {
           <div className="flex items-center ml-4 space-x-2">
             <button 
               onClick={() => setLanguage('en')}
-              className={language === 'en' ? 'active-language' : 'inactive-language'}
+              className={`${language === 'en' ? 'active-language' : 'inactive-language'}`}
             >
               EN
             </button>
             <span className="text-white">|</span>
             <button 
               onClick={() => setLanguage('ru')}
-              className={language === 'ru' ? 'active-language' : 'inactive-language'}
+              className={`${language === 'ru' ? 'active-language' : 'inactive-language'}`}
             >
               RU
             </button>
@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = () => {
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-[52px] left-0 right-0 bg-aiix-primary/95 backdrop-blur-md p-4">
+          <div className="md:hidden absolute top-[52px] left-0 right-0 bg-aiix-primary/90 backdrop-blur-md p-4">
             <nav className="flex flex-col space-y-4">
               <a onClick={() => scrollToSection('hero')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
                 {language === 'en' ? 'Home' : 'Главная'}
@@ -136,7 +136,7 @@ const Header: React.FC<HeaderProps> = () => {
                     setLanguage('en');
                     setMobileMenuOpen(false);
                   }}
-                  className={language === 'en' ? 'active-language' : 'inactive-language'}
+                  className={`${language === 'en' ? 'active-language' : 'inactive-language'}`}
                 >
                   EN
                 </button>
@@ -146,7 +146,7 @@ const Header: React.FC<HeaderProps> = () => {
                     setLanguage('ru');
                     setMobileMenuOpen(false);
                   }}
-                  className={language === 'ru' ? 'active-language' : 'inactive-language'}
+                  className={`${language === 'ru' ? 'active-language' : 'inactive-language'}`}
                 >
                   RU
                 </button>
