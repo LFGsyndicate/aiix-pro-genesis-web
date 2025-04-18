@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -33,52 +34,51 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header 
-      id="header"
       className={`fixed w-full z-50 transition-colors duration-300 ${
         scrolled ? 'bg-aiix-primary/90 backdrop-blur-md' : ''
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center h-[52px]">
-        <a href="#" className="text-white text-2xl font-bold">AIix Pro</a>
+      <div className="container mx-auto px-4 flex justify-between items-center h-[18px] py-5">
+        <a href="#" className="text-white text-sm font-bold">AIix Pro</a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a onClick={() => scrollToSection('hero')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+        <nav className="hidden md:flex items-center space-x-6">
+          <a onClick={() => scrollToSection('hero')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'Home' : 'Главная'}
           </a>
-          <a onClick={() => scrollToSection('about')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+          <a onClick={() => scrollToSection('about')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'About' : 'О нас'}
           </a>
-          <a onClick={() => scrollToSection('benefits')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+          <a onClick={() => scrollToSection('benefits')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'Benefits' : 'Преимущества'}
           </a>
-          <a onClick={() => scrollToSection('use-cases')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+          <a onClick={() => scrollToSection('use-cases')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'Use Cases' : 'Применения'}
           </a>
-          <a onClick={() => scrollToSection('approach')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+          <a onClick={() => scrollToSection('approach')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'Approach' : 'Подход'}
           </a>
-          <a onClick={() => scrollToSection('testimonials')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+          <a onClick={() => scrollToSection('testimonials')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'Testimonials' : 'Отзывы'}
           </a>
-          <a onClick={() => scrollToSection('faq')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+          <a onClick={() => scrollToSection('faq')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'FAQ' : 'ЧЗВ'}
           </a>
-          <a onClick={() => scrollToSection('contact')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
+          <a onClick={() => scrollToSection('contact')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors text-xs">
             {language === 'en' ? 'Contact' : 'Контакты'}
           </a>
           
           <div className="flex items-center ml-4 space-x-2">
             <button 
               onClick={() => setLanguage('en')}
-              className={`${language === 'en' ? 'active-language' : 'inactive-language'}`}
+              className={`${language === 'en' ? 'active-language' : 'inactive-language'} text-xs`}
             >
               EN
             </button>
-            <span className="text-white">|</span>
+            <span className="text-white text-xs">|</span>
             <button 
               onClick={() => setLanguage('ru')}
-              className={`${language === 'ru' ? 'active-language' : 'inactive-language'}`}
+              className={`${language === 'ru' ? 'active-language' : 'inactive-language'} text-xs`}
             >
               RU
             </button>
@@ -91,11 +91,11 @@ const Header: React.FC<HeaderProps> = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = () => {
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-[52px] left-0 right-0 bg-aiix-primary/90 backdrop-blur-md p-4">
+          <div className="md:hidden absolute top-[28px] left-0 right-0 bg-aiix-primary/90 backdrop-blur-md p-4">
             <nav className="flex flex-col space-y-4">
               <a onClick={() => scrollToSection('hero')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
                 {language === 'en' ? 'Home' : 'Главная'}
@@ -136,17 +136,17 @@ const Header: React.FC<HeaderProps> = () => {
                     setLanguage('en');
                     setMobileMenuOpen(false);
                   }}
-                  className={`${language === 'en' ? 'active-language' : 'inactive-language'}`}
+                  className={`${language === 'en' ? 'active-language' : 'inactive-language'} text-xs`}
                 >
                   EN
                 </button>
-                <span className="text-white">|</span>
+                <span className="text-white text-xs">|</span>
                 <button 
                   onClick={() => {
                     setLanguage('ru');
                     setMobileMenuOpen(false);
                   }}
-                  className={`${language === 'ru' ? 'active-language' : 'inactive-language'}`}
+                  className={`${language === 'ru' ? 'active-language' : 'inactive-language'} text-xs`}
                 >
                   RU
                 </button>
