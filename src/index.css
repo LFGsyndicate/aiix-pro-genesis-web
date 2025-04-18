@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +93,70 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom styles for AIix Pro */
+.vanta-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.section-container {
+  @apply py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto;
+}
+
+.benefit-card {
+  @apply bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg;
+}
+
+.testimonial-card {
+  @apply bg-white p-6 rounded-lg shadow-md;
+}
+
+.faq-item {
+  @apply border-b border-gray-200 py-4;
+}
+
+.social-icon {
+  @apply text-white hover:text-aiix-cyan transition-colors duration-300;
+}
+
+.active-language {
+  @apply font-bold text-white;
+}
+
+.inactive-language {
+  @apply text-gray-300 hover:text-white;
+}
+
+.btn-primary {
+  @apply bg-aiix-cyan text-white font-medium px-6 py-3 rounded-md hover:bg-aiix-magenta transition-colors duration-300;
+}
+
+.btn-secondary {
+  @apply bg-transparent border border-white text-white font-medium px-6 py-3 rounded-md hover:bg-white/10 transition-colors duration-300;
+}
+
+/* Language toggle styling */
+[lang="en"] .ru-content {
+  display: none;
+}
+
+[lang="ru"] .en-content {
+  display: none;
 }
