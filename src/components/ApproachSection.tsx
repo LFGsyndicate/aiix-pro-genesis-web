@@ -17,7 +17,7 @@ const ApproachStep: React.FC<ApproachStepProps> = ({
   icon
 }) => {
   return <div className="flex flex-col items-center text-center">
-      <div className="w-16 h-16 text-white rounded-full flex items-center justify-center mb-4 bg-blue-500 py-[4px]">
+      <div className="w-16 h-16 bg-aiix-cyan text-white rounded-full flex items-center justify-center mb-4">
         {icon}
       </div>
       
@@ -26,8 +26,8 @@ const ApproachStep: React.FC<ApproachStepProps> = ({
       </div>
       
       <h3 className="text-xl font-semibold text-aiix-darkblue mb-2">
-        <span className="en-content">{titleEn}</span>
-        <span className="ru-content">{titleRu}</span>
+        <span className="en-content mx-[17px]">{titleEn}</span>
+        <span className="ru-content mx-[20px] py-[20px]">{titleRu}</span>
       </h3>
       
       <p className="text-gray-600">
