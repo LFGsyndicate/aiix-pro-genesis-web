@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -6,7 +5,7 @@ interface HeaderProps {
   enableVanta: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ enableVanta }) => {
+const Header: React.FC<HeaderProps> = () => {
   const { language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +20,6 @@ const Header: React.FC<HeaderProps> = ({ enableVanta }) => {
   }, []);
 
   useEffect(() => {
-    // Set data-language attribute on document for CSS selectors
     document.documentElement.setAttribute('lang', language);
   }, [language]);
 
@@ -39,14 +37,8 @@ const Header: React.FC<HeaderProps> = ({ enableVanta }) => {
       className={`fixed w-full z-50 transition-colors duration-300 ${
         scrolled ? 'bg-aiix-primary/90 backdrop-blur-md' : 'bg-transparent'
       }`}
-      ref={(el) => {
-        if (el && !el.hasAttribute('data-vanta-applied')) {
-          el.setAttribute('data-vanta-applied', 'true');
-          enableVanta();
-        }
-      }}
     >
-      <div className="relative z-10 container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 flex justify-between items-center h-[52px]">
         <a href="#" className="text-white text-2xl font-bold">AIix Pro</a>
         
         {/* Desktop Navigation */}
@@ -111,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({ enableVanta }) => {
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-aiix-primary/95 backdrop-blur-md p-4 animate-fade-in">
+          <div className="md:hidden absolute top-[52px] left-0 right-0 bg-aiix-primary/95 backdrop-blur-md p-4">
             <nav className="flex flex-col space-y-4">
               <a onClick={() => scrollToSection('hero')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors">
                 {language === 'en' ? 'Home' : 'Главная'}
@@ -140,14 +132,20 @@ const Header: React.FC<HeaderProps> = ({ enableVanta }) => {
               
               <div className="flex items-center space-x-2 pt-2 border-t border-white/20">
                 <button 
-                  onClick={() => setLanguage('en')}
+                  onClick={() => {
+                    setLanguage('en');
+                    setMobileMenuOpen(false);
+                  }}
                   className={language === 'en' ? 'active-language' : 'inactive-language'}
                 >
                   EN
                 </button>
                 <span className="text-white">|</span>
                 <button 
-                  onClick={() => setLanguage('ru')}
+                  onClick={() => {
+                    setLanguage('ru');
+                    setMobileMenuOpen(false);
+                  }}
                   className={language === 'ru' ? 'active-language' : 'inactive-language'}
                 >
                   RU
