@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Telegram, Youtube, Instagram } from "lucide-react";
+import { Send, Youtube, Instagram } from "lucide-react";
 
 const Footer: React.FC = () => {
   const { language } = useLanguage();
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             
             <div className="flex gap-6">
               <a href="https://t.me/aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <Telegram size={20} />
+                <Send size={20} />
               </a>
               <a href="https://youtube.com/aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Youtube size={20} />

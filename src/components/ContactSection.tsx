@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Telegram, Twitter, MessageCircle } from "lucide-react";
+import { Send, MessageCircle, Twitter } from "lucide-react";
 
 const ContactSection: React.FC = () => {
   const { language } = useLanguage();
@@ -26,7 +26,7 @@ const ContactSection: React.FC = () => {
         <div className="flex flex-col items-center mb-12">
           <div className="flex gap-8 mb-8">
             <a href="https://t.me/aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <Telegram size={32} />
+              <Send size={32} />
             </a>
             <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="social-icon">
               <MessageCircle size={32} />
