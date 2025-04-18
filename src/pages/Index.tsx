@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { LanguageProvider } from '../context/LanguageContext';
+import { Separator } from '../components/ui/separator';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -21,7 +22,6 @@ declare global {
 
 const Index = () => {
   const vantaEffect = useRef<any>(null);
-  const vantaHeaderEffect = useRef<any>(null);
 
   useEffect(() => {
     // Load the required scripts dynamically
@@ -36,13 +36,13 @@ const Index = () => {
       });
     };
 
-    // Load scripts and initialize Vanta.js
+    // Load scripts and initialize Vanta.js only for hero section
     const initVanta = async () => {
       try {
         await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js');
         await loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js');
         
-        // Now that scripts are loaded, enable Vanta on elements
+        // Now that scripts are loaded, enable Vanta on hero section
         enableVantaOnElement();
       } catch (error) {
         console.error('Failed to initialize Vanta.js:', error);
@@ -56,64 +56,49 @@ const Index = () => {
       if (vantaEffect.current) {
         vantaEffect.current.destroy();
       }
-      if (vantaHeaderEffect.current) {
-        vantaHeaderEffect.current.destroy();
-      }
     };
   }, []);
 
   const enableVantaOnElement = () => {
     const vantaBgEl = document.getElementById('vanta-bg');
-    const headerEl = document.getElementById('header');
     
-    if (window.VANTA && window.THREE) {
-      if (vantaBgEl && !vantaEffect.current) {
-        vantaEffect.current = window.VANTA.HALO({
-          el: vantaBgEl,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          backgroundColor: 0x1630ca,
-          baseColor: 0x1a59,
-          amplitudeFactor: 1.90,
-          size: 0.30,
-          xOffset: 0,
-          yOffset: 0
-        });
-      }
-      
-      if (headerEl && !vantaHeaderEffect.current) {
-        vantaHeaderEffect.current = window.VANTA.HALO({
-          el: headerEl,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          backgroundColor: 0x1630ca,
-          baseColor: 0x1a59,
-          amplitudeFactor: 1.90,
-          size: 0.30,
-          xOffset: 0,
-          yOffset: 0
-        });
-      }
+    if (window.VANTA && window.THREE && vantaBgEl && !vantaEffect.current) {
+      vantaEffect.current = window.VANTA.HALO({
+        el: vantaBgEl,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        backgroundColor: 0x1630ca,
+        baseColor: 0x1a59,
+        amplitudeFactor: 1.90,
+        size: 0.30,
+        xOffset: 0,
+        yOffset: 0,
+        backgroundImage: '/lovable-uploads/80ca9e39-006f-4280-8c39-8036ffbce6f4.png'
+      });
     }
   };
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-white">
-        <Header enableVanta={enableVantaOnElement} />
+      <div className="min-h-screen bg-white text-sm">
+        <Header />
         <HeroSection enableVanta={enableVantaOnElement} />
+        <Separator />
         <AboutSection />
+        <Separator />
         <BenefitsSection />
+        <Separator />
         <UseCasesSection />
+        <Separator />
         <ApproachSection />
+        <Separator />
         <TestimonialsSection />
+        <Separator />
         <FaqSection />
+        <Separator />
         <ContactSection />
         <Footer />
       </div>
