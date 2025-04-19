@@ -93,12 +93,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-    font-size: 80%; /* Reduce text size by 20% except menu and logo */
+    font-size: 100%; /* Increased from 80% to 100% */
   }
 
   /* Override for menu and logo */
   .header-text {
-    font-size: 100% !important; /* Reset to normal size */
+    font-size: 125% !important; /* Increased from 100% to 125% */
   }
 
   html {
