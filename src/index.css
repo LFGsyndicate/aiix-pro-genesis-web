@@ -102,11 +102,11 @@
   }
 
   .nav-menu-text {
-    @apply text-[11px]; /* Slightly smaller than current size */
+    @apply text-[13px]; /* Slightly smaller than current size */
   }
 
   .hero-title {
-    @apply text-[1.6rem] md:text-[2.0rem]; /* Reduced from 4xl and 6xl */
+    @apply text-[1.6rem] md:text-[1.8rem]; /* Reduced from 4xl and 6xl */
   }
 
   .hero-subtitle {
