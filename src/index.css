@@ -98,7 +98,7 @@
 
   /* Override for menu and logo */
   .header-text {
-    font-size: 150% !important; /* Increased from 125% to 150% for header text */
+    font-size: 60% !important; /* Reduced from 150% to 60% */
   }
 
   .nav-menu-text {
