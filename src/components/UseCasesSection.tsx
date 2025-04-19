@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -33,7 +32,7 @@ const UseCasesSection: React.FC = () => {
     {
       id: "customer-service",
       titleEn: "Customer Service",
-      titleRu: "Обслуживание Клиентов",
+      titleRu: "Сервис",
       cases: [
         {
           titleEn: "24/7 L1 Support Resolution",

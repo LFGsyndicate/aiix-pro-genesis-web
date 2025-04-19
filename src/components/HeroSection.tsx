@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -23,7 +22,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center pt-20"
     >
-      {/* Vanta.js background will be applied to this element */}
       <div 
         id="vanta-bg" 
         className="absolute inset-0"
@@ -56,7 +54,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
             className="btn-primary text-lg"
           >
             <span className="en-content">Get a Free Consultation</span>
-            <span className="ru-content">Получить бесплатную консультацию</span>
+            <span className="ru-content">Консультация</span>
           </button>
           
           <button 

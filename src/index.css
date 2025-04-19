@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -94,7 +93,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-    font-size: 80%; /* Reduce text size by 20% */
+    font-size: 80%; /* Reduce text size by 20% except menu and logo */
+  }
+
+  /* Override for menu and logo */
+  .header-text {
+    font-size: 100% !important; /* Reset to normal size */
   }
 
   html {
