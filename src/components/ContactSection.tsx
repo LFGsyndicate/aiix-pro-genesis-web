@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Send, MessageCircle, Twitter, Youtube, Instagram } from "lucide-react";
@@ -43,7 +42,7 @@ const ContactSection: React.FC = () => {
           </div>
           
           <a 
-            href="https://t.me/aiixprof" 
+            href="https://t.me/aiix_pro_bot" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-primary text-base"
