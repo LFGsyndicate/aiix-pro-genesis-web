@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+
+import React, { useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface HeroSectionProps {
@@ -8,6 +9,13 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
   const { language } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section 
@@ -42,15 +50,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a 
-            href="https://t.me/aiix_pro_bot"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
+            onClick={scrollToContact}
             className="bg-transparent border border-white text-white hover:bg-white/10 transition-colors text-lg px-6 py-2 rounded"
           >
-            <span className="en-content">Contact Now</span>
-            <span className="ru-content">Связаться</span>
-          </a>
+            <span className="en-content">Consultation</span>
+            <span className="ru-content">Консультация</span>
+          </button>
           
           <button 
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
@@ -59,6 +65,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
             <span className="en-content">Learn More</span>
             <span className="ru-content">Узнать больше</span>
           </button>
+        </div>
+
+        <div className="mt-12">
+          <img 
+            src="/lovable-uploads/ed744e62-90c4-4e1e-ad28-1b00ed361880.png" 
+            alt="AI Network Visualization"
+            className="w-full max-w-4xl mx-auto rounded-lg"
+          />
         </div>
       </div>
     </section>
