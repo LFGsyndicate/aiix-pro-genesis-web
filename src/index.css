@@ -106,7 +106,7 @@
   }
 
   .hero-title {
-    @apply text-[1.6rem] md:text-[1.8rem]; /* Reduced from 4xl and 6xl */
+    @apply text-[1.6rem] md:text-[1.7rem]; /* Reduced from 4xl and 6xl */
   }
 
   .hero-subtitle {
