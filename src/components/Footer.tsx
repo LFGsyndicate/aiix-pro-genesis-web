@@ -23,7 +23,12 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="https://aiix.pro/privacy.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-sm text-gray-300 hover:text-white transition-colors"
+            >
               <span className="en-content">Privacy Policy</span>
               <span className="ru-content">Политика конфиденциальности</span>
             </a>

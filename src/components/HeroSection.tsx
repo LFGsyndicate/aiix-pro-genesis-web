@@ -9,13 +9,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
   const { language } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section 
       id="hero" 
@@ -49,13 +42,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button 
-            onClick={scrollToContact}
-            className="btn-primary text-lg"
+          <a 
+            href="https://t.me/aiix_pro_bot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-transparent border border-white text-white hover:bg-white/10 transition-colors text-lg px-6 py-2 rounded"
           >
-            <span className="en-content">Get a Free Consultation</span>
-            <span className="ru-content">Консультация</span>
-          </button>
+            <span className="en-content">Contact Now</span>
+            <span className="ru-content">Связаться</span>
+          </a>
           
           <button 
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}

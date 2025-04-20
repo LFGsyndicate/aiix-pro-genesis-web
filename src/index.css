@@ -93,24 +93,24 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-    font-size: 100%; /* Increased from 80% to 100% */
+    font-size: 100%;
   }
 
   /* Override for menu and logo */
   .header-text {
-    font-size: 100% !important; /* Increased from 150% to 60% */
+    font-size: 100% !important;
   }
 
   .nav-menu-text {
-    @apply text-[13px]; /* Slightly smaller than current size */
+    @apply text-[13px];
   }
 
   .hero-title {
-    @apply text-[1.6rem] md:text-[1.7rem]; /* Reduced from 4xl and 6xl */
+    @apply text-[1.6rem] md:text-[1.7rem];
   }
 
   .hero-subtitle {
-    @apply text-[0.73125rem] md:text-[0.975rem]; /* Reduced from text-xl and text-2xl */
+    @apply text-[0.73125rem] md:text-[0.975rem];
   }
 
   html {
@@ -118,7 +118,6 @@
   }
 }
 
-/* Custom styles for AIix Pro */
 .vanta-canvas {
   position: absolute;
   top: 0;
@@ -169,7 +168,6 @@
   @apply bg-transparent border border-white text-white font-medium px-5 py-2 rounded-md hover:bg-white/10 transition-colors duration-300;
 }
 
-/* Language toggle styling */
 [lang="en"] .ru-content {
   display: none;
 }
@@ -178,7 +176,6 @@
   display: none;
 }
 
-/* Optimized Russian text styles */
 .ru-content h1, .ru-content h2, .ru-content h3 {
   line-height: 1.3;
 }
