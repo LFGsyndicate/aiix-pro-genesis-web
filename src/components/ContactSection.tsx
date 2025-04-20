@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Send, MessageCircle, Twitter, Youtube, Instagram } from "lucide-react";
@@ -24,7 +25,7 @@ const ContactSection: React.FC = () => {
         
         <div className="flex flex-col items-center mb-10">
           <div className="flex gap-8 mb-8">
-            <a href="https://t.me/aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://t.me/aiix_pro_bot" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Send size={26} />
             </a>
             <a href="https://wa.me/79024182040" target="_blank" rel="noopener noreferrer" className="social-icon">

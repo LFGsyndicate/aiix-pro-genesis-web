@@ -66,14 +66,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
             <span className="ru-content">Узнать больше</span>
           </button>
         </div>
-
-        <div className="mt-12">
-          <img 
-            src="/lovable-uploads/ed744e62-90c4-4e1e-ad28-1b00ed361880.png" 
-            alt="AI Network Visualization"
-            className="w-full max-w-4xl mx-auto rounded-lg"
-          />
-        </div>
       </div>
     </section>
   );
