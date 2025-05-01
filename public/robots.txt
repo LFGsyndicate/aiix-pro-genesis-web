@@ -3,8 +3,8 @@
 User-agent: *
 Allow: /
 
-# Specify sitemap location (if you have one)
-# Sitemap: https://aiix.pro/sitemap.xml
+# Specify sitemap location
+Sitemap: https://aiix.pro/sitemap.xml
 
 # Specific rules for major search engines
 User-agent: Googlebot
