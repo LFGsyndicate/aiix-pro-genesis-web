@@ -53,13 +53,15 @@ const ResearchProjectsSection: React.FC = () => {
             <Card key={project.id} className="overflow-hidden border-0 shadow-lg">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-0">
-                  <AspectRatio ratio={16 / 9} className="bg-muted">
-                    <img 
-                      src={project.imageUrl} 
-                      alt={language === 'en' ? project.title : (project.titleRu || project.title)} 
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                    <AspectRatio ratio={16 / 9} className="bg-muted hover:opacity-90 transition-opacity">
+                      <img 
+                        src={project.imageUrl} 
+                        alt={language === 'en' ? project.title : (project.titleRu || project.title)} 
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                  </a>
                 </div>
                 <div className="flex flex-col justify-between p-6">
                   <div>
