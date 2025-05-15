@@ -69,7 +69,7 @@ export default {
 					secondary: '#1a59',
 					darkblue: '#0b175a',
 					magenta: '#D946EF',
-					cyan: '#0FA0CE',
+					cyan: '#1630CA',  // Updated from #0FA0CE to #1630CA
 					lightgray: '#f5f5f7',
 					gray: '#8A898C',
 				}
