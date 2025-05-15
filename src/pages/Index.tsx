@@ -5,6 +5,7 @@ import { Separator } from '../components/ui/separator';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
+import ResearchProjectsSection from '../components/ResearchProjectsSection';
 import BenefitsSection from '../components/BenefitsSection';
 import UseCasesSection from '../components/UseCasesSection';
 import ApproachSection from '../components/ApproachSection';
@@ -88,6 +89,8 @@ const Index = () => {
         <HeroSection enableVanta={enableVantaOnElement} />
         <Separator />
         <AboutSection />
+        <Separator />
+        <ResearchProjectsSection />
         <Separator />
         <BenefitsSection />
         <Separator />
