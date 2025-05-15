@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const AboutSection: React.FC = () => {
   const { language } = useLanguage();
@@ -50,6 +52,18 @@ const AboutSection: React.FC = () => {
                   и предоставления измеримых результатов.
                 </span>
               </p>
+            </div>
+          </div>
+          
+          <div className="order-1 md:order-2">
+            <div className="rounded-lg overflow-hidden shadow-md">
+              <AspectRatio ratio={16 / 9} className="bg-muted">
+                <img 
+                  src="/lovable-uploads/963d9e1c-7386-40ca-a3d3-e7f8339656f9.png" 
+                  alt="AI agent visualization" 
+                  className="object-cover w-full h-full"
+                />
+              </AspectRatio>
             </div>
           </div>
         </div>
