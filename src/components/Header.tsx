@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X } from 'lucide-react';
@@ -53,7 +54,7 @@ const Header: React.FC<HeaderProps> = () => {
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        <a href="#" className="text-white text-xs font-bold header-text">AIix Pro</a>
+        <a href="#" className="text-white text-xs font-bold header-text">AIIX PRO</a>
 
         <nav className="hidden md:flex items-center space-x-6">
           <a onClick={() => scrollToSection('hero')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
