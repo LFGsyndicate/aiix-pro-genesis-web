@@ -110,7 +110,7 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
         </nav>
 
-        {mobileMenuOpen && <div className="md:hidden absolute top-[22px] left-0 right-0 bg-aiix-primary/90 backdrop-blur-md p-4">
+        {mobileMenuOpen && <div className="md:hidden absolute top-[60px] left-0 right-0 bg-aiix-primary/90 backdrop-blur-md p-4">
           <nav className="flex flex-col space-y-3">
             <a onClick={() => scrollToSection('hero')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
               {language === 'en' ? 'Home' : 'Главная'}
