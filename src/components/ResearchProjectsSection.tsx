@@ -41,7 +41,7 @@ const projects: ResearchProject[] = [
     titleRu: 'Симбиоз децентрализованных автономных организаций и AI-агентов: новые горизонты для генерации доходов и стартап-инноваций',
     description: 'Exploring the revolutionary intersection of DAOs and AI agents, uncovering innovative models for autonomous revenue generation and breakthrough startup opportunities.',
     descriptionRu: 'Исследование революционного пересечения DAO и AI-агентов, раскрытие инновационных моделей автономной генерации доходов и прорывных стартап-возможностей.',
-    imageUrl: '/lovable-uploads/916565a8-f380-47b4-8007-2ccf44e7f76e.png',
+    imageUrl: '/lovable-uploads/90cca6a8-294c-4107-8f10-d62992812f95.png',
     link: 'https://lfgsyndicate.github.io/DAO-AI-Future'
   }
 ];
