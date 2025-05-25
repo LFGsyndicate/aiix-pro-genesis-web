@@ -34,6 +34,15 @@ const projects: ResearchProject[] = [
     descriptionRu: 'Ваш путеводитель по пониманию преобразующей силы децентрализованных технологий и искусственного интеллекта.',
     imageUrl: '/lovable-uploads/4f9589b7-8875-44e8-8d53-6ec826e6f19e.png',
     link: 'https://lfgsyndicate.github.io/dApp-Transformation-Nexus'
+  },
+  {
+    id: 'dao-ai-symbiosis',
+    title: 'The Symbiosis of Decentralized Autonomous Organizations and AI Agents: New Frontiers for Revenue Generation and Startup Innovation',
+    titleRu: 'Симбиоз децентрализованных автономных организаций и AI-агентов: новые горизонты для генерации доходов и стартап-инноваций',
+    description: 'Exploring the revolutionary intersection of DAOs and AI agents, uncovering innovative models for autonomous revenue generation and breakthrough startup opportunities.',
+    descriptionRu: 'Исследование революционного пересечения DAO и AI-агентов, раскрытие инновационных моделей автономной генерации доходов и прорывных стартап-возможностей.',
+    imageUrl: '/lovable-uploads/916565a8-f380-47b4-8007-2ccf44e7f76e.png',
+    link: 'https://lfgsyndicate.github.io/DAO-AI-Future'
   }
 ];
 
