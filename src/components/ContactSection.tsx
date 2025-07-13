@@ -43,7 +43,7 @@ const ContactSection: React.FC = () => {
             href="https://t.me/aiixprof" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="btn-primary text-base"
+            className="btn-primary text-base learn-more-btn"
           >
             <span className="en-content">Contact Now</span>
             <span className="ru-content">Связаться</span>

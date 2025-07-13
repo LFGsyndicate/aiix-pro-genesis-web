@@ -114,6 +114,12 @@
     @apply text-[13px];
   }
 
+  /* Меню: цвет текста при hover и active */
+  .nav-menu-text:hover,
+  .nav-menu-text:active {
+    color: #f5a6e6 !important;
+  }
+
   .hero-title {
     @apply text-[1.6rem] md:text-[1.7rem];
   }
@@ -161,6 +167,12 @@
   @apply text-white hover:text-aiix-cyan transition-colors duration-300;
 }
 
+/* Соцсети: цвет иконок при hover и active */
+.social-icon:hover,
+.social-icon:active {
+  color: #f5a6e6 !important;
+}
+
 .active-language {
   @apply font-bold text-white;
 }
@@ -175,6 +187,37 @@
 
 .btn-secondary {
   @apply bg-transparent border border-white text-white font-medium px-5 py-2 rounded-md hover:bg-white/10 transition-colors duration-300;
+}
+
+/* Кнопки: фон при hover и active */
+button:hover,
+button:active,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-secondary:hover,
+.btn-secondary:active {
+  background-color: #f5a6e6 !important;
+  color: #fff !important;
+  border-color: #f5a6e6 !important;
+}
+
+/* Кнопки Order Now и Learn More: прозрачный фон на 93% */
+button.order-now-btn,
+button.learn-more-btn {
+  background: rgba(245, 166, 230, 0.07) !important;
+}
+
+button.learn-more-btn,
+a.learn-more-btn,
+.learn-more-btn {
+  background: rgba(245, 166, 230, 0.10) !important;
+  background-color: rgba(245, 166, 230, 0.10) !important;
+}
+
+a.learn-more-btn:hover,
+.learn-more-btn:hover {
+  background: rgba(245, 166, 230, 0.07) !important;
+  background-color: rgba(245, 166, 230, 0.07) !important;
 }
 
 [lang="en"] .ru-content {

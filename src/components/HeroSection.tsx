@@ -52,15 +52,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button 
             onClick={scrollToContact}
-            className="bg-transparent border border-white text-white hover:bg-white/10 transition-colors text-lg px-6 py-2 rounded"
+            className="order-now-btn bg-transparent border border-white text-white hover:bg-white/10 transition-colors text-lg px-6 py-2 rounded"
           >
-            <span className="en-content">Consultation</span>
-            <span className="ru-content">Консультация</span>
+            <span className="en-content">Order Now</span>
+            <span className="ru-content">Заказать</span>
           </button>
           
           <button 
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn-secondary text-lg"
+            className="learn-more-btn text-lg border border-white text-white px-6 py-2 rounded transition-colors"
           >
             <span className="en-content">Learn More</span>
             <span className="ru-content">Узнать больше</span>

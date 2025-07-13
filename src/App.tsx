@@ -6,17 +6,31 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Helmet } from "react-helmet-async";
-import { useElevenLabsWidget } from "./hooks/use-elevenlabs-widget";
+import React, { useEffect } from 'react';
 
 // Professional ElevenLabs widget integration
 const queryClient = new QueryClient();
 
+// Объявление для TypeScript, чтобы он "понимал" тег виджета
+// eslint-disable-next-line @typescript-eslint/no-namespace
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'agent-id'?: string }, HTMLElement>;
+    }
+  }
+}
+
 const App = () => {
-  const { isLoaded, error } = useElevenLabsWidget({
-    agentId: "t1XU82nmJv5bSKHkNnQG",
-    onLoad: () => console.log('✅ ElevenLabs widget fully operational'),
-    onError: (err) => console.error('❌ Widget failed:', err)
-  });
+  useEffect(() => {
+    if (!document.querySelector('script[src="https://unpkg.com/@elevenlabs/convai-widget-embed"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+      script.async = true;
+      script.type = 'text/javascript';
+      document.head.appendChild(script);
+    }
+  }, []);
 
   return (
     <>
@@ -52,40 +66,8 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </HashRouter>
-          
-          {/* Professional loading indicator */}
-          {!isLoaded && !error && (
-            <div style={{
-              position: 'fixed',
-              bottom: '20px',
-              right: '20px',
-              background: '#007bff',
-              color: 'white',
-              padding: '10px 15px',
-              borderRadius: '5px',
-              fontSize: '12px',
-              zIndex: 1000
-            }}>
-              Loading AI Assistant...
-            </div>
-          )}
-          
-          {/* Error indicator */}
-          {error && (
-            <div style={{
-              position: 'fixed',
-              bottom: '20px',
-              right: '20px',
-              background: '#dc3545',
-              color: 'white',
-              padding: '10px 15px',
-              borderRadius: '5px',
-              fontSize: '12px',
-              zIndex: 1000
-            }}>
-              AI Assistant unavailable
-            </div>
-          )}
+          {/* Оригинальный ElevenLabs-виджет — только чистый код */}
+          <elevenlabs-convai agent-id="t1XU82nmJv5bSKHkNnQG"></elevenlabs-convai>
         </TooltipProvider>
       </QueryClientProvider>
     </>
