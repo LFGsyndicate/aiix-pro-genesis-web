@@ -1,8 +1,8 @@
-# Workflow для сборки и деплоя Vite-сайта на GitHub Pages
+# Имя workflow
 name: Deploy Vite site to Pages
 
 on:
-  # Запускается при push в ветку main
+  # Запускается при push в ветку 'main'
   push:
     branches: ['main']
 
@@ -15,40 +15,48 @@ permissions:
   pages: write
   id-token: write
 
-# Разрешить только один одновременный деплой
+# Настройки параллелизма, чтобы новый коммит отменял старую сборку
 concurrency:
   group: 'pages'
-  cancel-in-progress: true # Ставим true, чтобы новая версия отменяла старую
+  cancel-in-progress: true
 
 jobs:
-  # Задача сборки
+  # --- ЗАДАЧА СБОРКИ ---
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout # Скачивание кода репозитория
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Node.js # Установка Node.js
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18 # Версия Node.js
-          cache: 'npm' # Кэширование зависимостей
-      - name: Install dependencies # Установка зависимостей
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
         run: npm install
-      - name: Build # Сборка проекта
-        run: npm run build
-      - name: Upload artifact # Загрузка собранного артефакта
+
+      - name: Build project
+        run: npm run build # Эта команда создает папку 'dist'
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Указываем папку с собранным проектом
+          # ----- ЭТО САМАЯ ВАЖНАЯ СТРОКА -----
+          # Мы загружаем именно результат сборки из папки 'dist'
+          path: './dist' 
+          # ------------------------------------
 
-  # Задача деплоя
+  # --- ЗАДАЧА ДЕПЛОЯ ---
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build # Запускается после успешной сборки
+    needs: build # Эта задача ждет завершения 'build'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        # Никаких 'with' здесь не нужно, он автоматически возьмет артефакт 'github-pages'
