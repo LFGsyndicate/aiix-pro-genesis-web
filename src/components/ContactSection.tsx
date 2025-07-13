@@ -28,7 +28,7 @@ const ContactSection: React.FC = () => {
             <a href="https://t.me/aiixprof" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Send size={26} />
             </a>
-            <a href="https://wa.me/79024182040" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://wa.me/79097878786" target="_blank" rel="noopener noreferrer" className="social-icon">
               <MessageCircle size={26} />
             </a>
             <a href="https://www.youtube.com/@aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
