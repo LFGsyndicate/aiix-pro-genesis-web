@@ -5,22 +5,34 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { Helmet } from "react-helmet-async"; // Импортируем Helmet
+import { Helmet } from "react-helmet-async";
+import { useElevenLabsWidget } from "./hooks/use-elevenlabs-widget";
 
 // Объявление для TypeScript, чтобы он "понимал" тег виджета
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'agent-id'?: string; 'api-base-url'?: string; }, HTMLElement>;
+      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 
+        'agent-id'?: string; 
+        'api-base-url'?: string; 
+      }, HTMLElement>;
     }
   }
 }
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <>
-    <Helmet>
+const App = () => {
+  const { isLoaded, error } = useElevenLabsWidget({
+    agentId: "t1XU82nmJv5bSKHkNnQG",
+    apiBaseUrl: "https://proxy.aiix.pro/elevenlabs-api",
+    onLoad: () => console.log('🎯 ElevenLabs widget initialized successfully'),
+    onError: (err) => console.error('❌ Widget failed to load:', err)
+  });
+
+  return (
+    <>
+      <Helmet>
         <title>AIix Pro - Leading AI Agent Development Company | Custom AI Solutions</title>
         <meta name="description" content="AIix Pro specializes in developing custom AI agents for business automation. Our intelligent solutions help streamline workflows and boost efficiency. Explore our research on DAO-AI symbiosis and 700+ AI startup ideas." />
         <meta name="author" content="AIix Pro by DAO LFGsyndicate" />
@@ -40,29 +52,45 @@ const App = () => (
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://aiix.pro" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-        {/* Скрипты аналитики можно оставить здесь или перенести в useEffect, если они требуют сложной инициализации */}
-    </Helmet>
+      </Helmet>
 
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </HashRouter>
-        
-        {/* РАБОЧИЙ КОД ВИДЖЕТА */}
-        <elevenlabs-convai
-          agent-id="t1XU82nmJv5bSKHkNnQG"
-          api-base-url="https://proxy.aiix.pro/elevenlabs-api"
-        ></elevenlabs-convai>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <HashRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </HashRouter>
+          
+          {/* ElevenLabs Widget */}
+          <elevenlabs-convai
+            agent-id="t1XU82nmJv5bSKHkNnQG"
+            api-base-url="https://proxy.aiix.pro/elevenlabs-api"
+            style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}
+          ></elevenlabs-convai>
 
-      </TooltipProvider>
-    </QueryClientProvider>
-  </>
-);
+          {/* Debug info */}
+          {error && (
+            <div style={{ 
+              position: 'fixed', 
+              top: '20px', 
+              right: '20px', 
+              background: 'red', 
+              color: 'white', 
+              padding: '10px',
+              zIndex: 1001,
+              borderRadius: '5px'
+            }}>
+              Widget Error: {error.message}
+            </div>
+          )}
+        </TooltipProvider>
+      </QueryClientProvider>
+    </>
+  );
+};
 
 export default App;
