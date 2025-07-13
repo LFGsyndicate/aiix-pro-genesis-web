@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom AIix Pro colors */
+    --aiix-primary: 229 83% 47%;
+    --aiix-secondary: 224 94% 21%;
+    --aiix-darkblue: 224 89% 19%;
+    --aiix-magenta: 295 72% 69%;
+    --aiix-cyan: 229 83% 47%;
+    --aiix-lightgray: 220 14% 96%;
+    --aiix-gray: 240 3% 55%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-size: 100%;
+  }
+
+  /* Override for menu and logo */
+  .header-text {
+    font-size: 100% !important;
+  }
+
+  .nav-menu-text {
+    @apply text-[13px];
+  }
+
+  .hero-title {
+    @apply text-[1.6rem] md:text-[1.7rem];
+  }
+
+  .hero-subtitle {
+    @apply text-[0.73125rem] md:text-[0.975rem];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.vanta-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.section-container {
+  @apply py-12 md:py-20 px-4 md:px-8 max-w-7xl mx-auto;
+}
+
+.benefit-card {
+  @apply bg-white p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg;
+}
+
+.testimonial-card {
+  @apply bg-white p-4 rounded-lg shadow-md;
+}
+
+.faq-item {
+  @apply border-b border-gray-200 py-3;
+}
+
+.social-icon {
+  @apply text-white hover:text-aiix-cyan transition-colors duration-300;
+}
+
+.active-language {
+  @apply font-bold text-white;
+}
+
+.inactive-language {
+  @apply text-gray-300 hover:text-white;
+}
+
+.btn-primary {
+  @apply bg-aiix-cyan text-white font-medium px-5 py-2 rounded-md hover:bg-aiix-magenta transition-colors duration-300;
+}
+
+.btn-secondary {
+  @apply bg-transparent border border-white text-white font-medium px-5 py-2 rounded-md hover:bg-white/10 transition-colors duration-300;
+}
+
+[lang="en"] .ru-content {
+  display: none;
+}
+
+[lang="ru"] .en-content {
+  display: none;
+}
+
+.ru-content h1, .ru-content h2, .ru-content h3 {
+  line-height: 1.3;
+}
+
+.ru-content p, .ru-content li {
+  line-height: 1.5;
+}
