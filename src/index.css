@@ -44,6 +44,15 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom AIix Pro colors */
+    --aiix-primary: 229 83% 47%;
+    --aiix-secondary: 224 94% 21%;
+    --aiix-darkblue: 224 89% 19%;
+    --aiix-magenta: 295 72% 69%;
+    --aiix-cyan: 229 83% 47%;
+    --aiix-lightgray: 220 14% 96%;
+    --aiix-gray: 240 3% 55%;
   }
 
   .dark {

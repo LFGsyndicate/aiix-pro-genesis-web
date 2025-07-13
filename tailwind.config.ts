@@ -65,13 +65,13 @@ export default {
 				},
 				// Custom colors for AIix Pro
 				aiix: {
-					primary: '#1630ca',
-					secondary: '#1a59',
-					darkblue: '#0b175a',
-					magenta: '#D946EF',
-					cyan: '#1630CA',  // Updated from #0FA0CE to #1630CA
-					lightgray: '#f5f5f7',
-					gray: '#8A898C',
+					primary: 'hsl(var(--aiix-primary))',
+					secondary: 'hsl(var(--aiix-secondary))',
+					darkblue: 'hsl(var(--aiix-darkblue))',
+					magenta: 'hsl(var(--aiix-magenta))',
+					cyan: 'hsl(var(--aiix-cyan))',
+					lightgray: 'hsl(var(--aiix-lightgray))',
+					gray: 'hsl(var(--aiix-gray))',
 				}
 			},
 			borderRadius: {

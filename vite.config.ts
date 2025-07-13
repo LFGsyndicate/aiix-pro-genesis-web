@@ -10,9 +10,8 @@ export default defineConfig(({ mode }) => ({
     host: '::',
     port: 8080,
   },
-  // ---> Добавьте эту строку <---
-  base: '/', // Явно указываем базовый путь для продакшена
-  // ---> Конец добавленной строки <---
+  // Определяем base path в зависимости от режима
+  base: mode === 'production' ? './' : '/',
   plugins: [
     react(),
     mode === 'development' && componentTagger(), // Используется только при разработке
