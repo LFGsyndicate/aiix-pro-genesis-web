@@ -77,7 +77,7 @@ const Index = () => {
         size: 0.30,
         xOffset: 0,
         yOffset: 0,
-        backgroundImage: '/lovable-uploads/80ca9e39-006f-4280-8c39-8036ffbce6f4.png'
+        // backgroundImage: '/lovable-uploads/80ca9e39-006f-4280-8c39-8036ffbce6f4.png'
       });
     }
   };
