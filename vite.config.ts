@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   // GitHub Pages deployment configuration
-  base: mode === 'production' ? '/aiix-pro-genesis-web/' : '/',
+  base: './',
   plugins: [
     react(),
     mode === 'development' && componentTagger(), // Используется только при разработке
