@@ -6,22 +6,36 @@ import './index.css'
 
 // Load ElevenLabs widget script dynamically for GitHub Pages compatibility
 const loadWidgetScript = () => {
+  // Only load if not already loaded
+  if (document.querySelector('script[src*="elevenlabs-convai"]')) {
+    return;
+  }
+
   const script = document.createElement('script');
   script.src = 'https://proxy.aiix.pro/widget-script/@elevenlabs/elevenlabs-convai';
   script.async = true;
+  script.defer = true;
+  
   script.onload = () => {
-    console.log('ElevenLabs widget script loaded successfully');
+    console.log('✅ ElevenLabs widget script loaded successfully');
   };
-  script.onerror = () => {
-    console.error('Failed to load ElevenLabs widget script');
+  
+  script.onerror = (error) => {
+    console.error('❌ Failed to load ElevenLabs widget script:', error);
   };
+  
   document.head.appendChild(script);
 };
 
 // Component to load widget script on mount
 const AppWithWidget = () => {
   useEffect(() => {
-    loadWidgetScript();
+    // Load script after a short delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      loadWidgetScript();
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return <App />;
