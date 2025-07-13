@@ -52,11 +52,9 @@
   <body>
     <noscript><div><img src="https://mc.yandex.ru/watch/101525542" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     
-    <!-- Это контейнер для вашего React-приложения -->
     <div id="root"></div>
 
     <!-- =================== РАБОЧИЙ КОД ВИДЖЕТА =================== -->
-    <!-- 1. HTML-тег виджета с указанием нашего прокси для API-запросов -->
     <elevenlabs-convai
       agent-id="t1XU82nmJv5bSKHkNnQG"
       api-base-url="https://proxy.aiix.pro/elevenlabs-api"
@@ -67,7 +65,7 @@
     <!-- 1. Точка входа для Vite, чтобы ваше React-приложение загрузилось -->
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- 2. Загрузка скрипта виджета через наш прокси-сервер -->
+    <!-- 2. ИСПРАВЛЕННАЯ Загрузка скрипта виджета через наш прокси-сервер -->
     <script src="https://proxy.aiix.pro/widget-script/@elevenlabs/elevenlabs-convai" async type="text/javascript"></script>
     <!-- ========================================================== -->
 
