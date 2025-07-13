@@ -14,7 +14,6 @@ declare global {
     interface IntrinsicElements {
       'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 
         'agent-id'?: string; 
-        'api-base-url'?: string; 
       }, HTMLElement>;
     }
   }
@@ -65,10 +64,9 @@ const App = () => {
             </Routes>
           </HashRouter>
           
-          {/* ElevenLabs Widget */}
+          {/* ElevenLabs Widget - используем правильную конфигурацию для работы через прокси */}
           <elevenlabs-convai
             agent-id="t1XU82nmJv5bSKHkNnQG"
-            api-base-url="https://proxy.aiix.pro/elevenlabs-api"
             style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}
           ></elevenlabs-convai>
 
@@ -82,7 +80,8 @@ const App = () => {
               color: 'white', 
               padding: '10px',
               zIndex: 1001,
-              borderRadius: '5px'
+              borderRadius: '5px',
+              fontSize: '12px'
             }}>
               Widget Error: {error.message}
             </div>

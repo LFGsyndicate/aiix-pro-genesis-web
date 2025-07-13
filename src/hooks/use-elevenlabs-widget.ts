@@ -20,16 +20,16 @@ export const useElevenLabsWidget = ({
     const loadWidget = async () => {
       try {
         // Check if widget is already loaded
-        if (document.querySelector('script[src*="elevenlabs"]')) {
+        if (document.querySelector('script[src*="convai-widget-embed"]')) {
           setIsLoaded(true);
           onLoad?.();
           return;
         }
 
-        // Correct ElevenLabs widget script URL
-        const scriptUrl = 'https://elevenlabs.io/convai-widget/index.js';
+        // Use Cloudflare Worker proxy for Russian users
+        const scriptUrl = 'https://proxy.aiix.pro/convai-widget-embed';
         
-        console.log('🔄 Loading ElevenLabs widget from:', scriptUrl);
+        console.log('🔄 Loading ElevenLabs widget via proxy:', scriptUrl);
         
         const script = document.createElement('script');
         script.src = scriptUrl;
@@ -37,24 +37,42 @@ export const useElevenLabsWidget = ({
         script.defer = true;
         
         script.onload = () => {
-          console.log('✅ ElevenLabs widget script loaded successfully');
+          console.log('✅ ElevenLabs widget loaded successfully via proxy');
           
           // Initialize the widget
           setTimeout(() => {
             const widget = document.querySelector('elevenlabs-convai');
             if (widget) {
-              console.log('🎯 Widget element found, initializing...');
+              console.log('🎯 Widget element found and initialized');
               setIsLoaded(true);
               onLoad?.();
             }
-          }, 500);
+          }, 1000);
         };
         
         script.onerror = (error) => {
-          console.error('❌ Failed to load ElevenLabs widget script:', error);
-          const err = new Error('Failed to load ElevenLabs widget script');
-          setError(err);
-          onError?.(err);
+          console.error('❌ Failed to load widget via proxy:', error);
+          
+          // Fallback to direct loading if proxy fails
+          console.log('🔄 Trying direct loading as fallback...');
+          const fallbackScript = document.createElement('script');
+          fallbackScript.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+          fallbackScript.async = true;
+          fallbackScript.defer = true;
+          
+          fallbackScript.onload = () => {
+            console.log('✅ Widget loaded via direct fallback');
+            setIsLoaded(true);
+            onLoad?.();
+          };
+          
+          fallbackScript.onerror = () => {
+            const err = new Error('Both proxy and direct loading failed');
+            setError(err);
+            onError?.(err);
+          };
+          
+          document.head.appendChild(fallbackScript);
         };
         
         document.head.appendChild(script);
@@ -67,7 +85,7 @@ export const useElevenLabsWidget = ({
     };
 
     // Load widget after DOM is ready
-    const timer = setTimeout(loadWidget, 1000);
+    const timer = setTimeout(loadWidget, 500);
     
     return () => clearTimeout(timer);
   }, [agentId, apiBaseUrl, onLoad, onError]);
