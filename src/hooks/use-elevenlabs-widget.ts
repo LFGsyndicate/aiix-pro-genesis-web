@@ -20,57 +20,45 @@ export const useElevenLabsWidget = ({
     const loadWidget = async () => {
       try {
         // Check if widget is already loaded
-        if (document.querySelector('script[src*="elevenlabs-convai"]')) {
+        if (document.querySelector('script[src*="elevenlabs"]')) {
           setIsLoaded(true);
           onLoad?.();
           return;
         }
 
-        // Try multiple sources for the widget
-        const sources = [
-          'https://proxy.aiix.pro/widget-script/@elevenlabs/elevenlabs-convai',
-          'https://unpkg.com/@elevenlabs/elevenlabs-convai@latest/dist/index.js',
-          'https://cdn.jsdelivr.net/npm/@elevenlabs/elevenlabs-convai@latest/dist/index.js'
-        ];
-
-        let loaded = false;
-
-        for (const src of sources) {
-          try {
-            await new Promise<void>((resolve, reject) => {
-              const script = document.createElement('script');
-              script.src = src;
-              script.async = true;
-              script.defer = true;
-              
-              script.onload = () => {
-                console.log(`✅ ElevenLabs widget loaded from: ${src}`);
-                loaded = true;
-                setIsLoaded(true);
-                setError(null);
-                onLoad?.();
-                resolve();
-              };
-              
-              script.onerror = () => {
-                console.warn(`⚠️ Failed to load from ${src}, trying next...`);
-                reject(new Error(`Failed to load from ${src}`));
-              };
-              
-              document.head.appendChild(script);
-            });
-            
-            if (loaded) break;
-          } catch (err) {
-            console.warn(`Source ${src} failed:`, err);
-          }
-        }
-
-        if (!loaded) {
-          const finalError = new Error('All widget sources failed to load');
-          setError(finalError);
-          onError?.(finalError);
-        }
+        // Correct ElevenLabs widget script URL
+        const scriptUrl = 'https://elevenlabs.io/convai-widget/index.js';
+        
+        console.log('🔄 Loading ElevenLabs widget from:', scriptUrl);
+        
+        const script = document.createElement('script');
+        script.src = scriptUrl;
+        script.async = true;
+        script.defer = true;
+        
+        script.onload = () => {
+          console.log('✅ ElevenLabs widget script loaded successfully');
+          
+          // Initialize the widget
+          setTimeout(() => {
+            const widget = document.querySelector('elevenlabs-convai');
+            if (widget) {
+              console.log('🎯 Widget element found, initializing...');
+              setIsLoaded(true);
+              onLoad?.();
+            }
+          }, 500);
+        };
+        
+        script.onerror = (error) => {
+          console.error('❌ Failed to load ElevenLabs widget script:', error);
+          const err = new Error('Failed to load ElevenLabs widget script');
+          setError(err);
+          onError?.(err);
+        };
+        
+        document.head.appendChild(script);
+        
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Unknown error');
         setError(error);
@@ -78,8 +66,8 @@ export const useElevenLabsWidget = ({
       }
     };
 
-    // Load widget after a short delay
-    const timer = setTimeout(loadWidget, 500);
+    // Load widget after DOM is ready
+    const timer = setTimeout(loadWidget, 1000);
     
     return () => clearTimeout(timer);
   }, [agentId, apiBaseUrl, onLoad, onError]);
