@@ -24,7 +24,6 @@ const queryClient = new QueryClient();
 const App = () => {
   const { isLoaded, error } = useElevenLabsWidget({
     agentId: "t1XU82nmJv5bSKHkNnQG",
-    apiBaseUrl: "https://proxy.aiix.pro/elevenlabs-api",
     onLoad: () => console.log('🎯 ElevenLabs widget initialized successfully'),
     onError: (err) => console.error('❌ Widget failed to load:', err)
   });

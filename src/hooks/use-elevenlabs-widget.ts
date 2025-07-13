@@ -2,14 +2,12 @@ import { useEffect, useState } from 'react';
 
 interface UseElevenLabsWidgetOptions {
   agentId: string;
-  apiBaseUrl: string;
   onLoad?: () => void;
   onError?: (error: Error) => void;
 }
 
 export const useElevenLabsWidget = ({
   agentId,
-  apiBaseUrl,
   onLoad,
   onError
 }: UseElevenLabsWidgetOptions) => {
@@ -26,35 +24,49 @@ export const useElevenLabsWidget = ({
           return;
         }
 
-        // Use Cloudflare Worker proxy for Russian users
-        const scriptUrl = 'https://proxy.aiix.pro/convai-widget-embed';
+        console.log('🔄 Loading ElevenLabs widget via Cloudflare Worker proxy...');
         
-        console.log('🔄 Loading ElevenLabs widget via proxy:', scriptUrl);
+        // Create widget element first
+        const widgetElement = document.createElement('elevenlabs-convai');
+        widgetElement.setAttribute('agent-id', agentId);
+        widgetElement.style.position = 'fixed';
+        widgetElement.style.bottom = '20px';
+        widgetElement.style.right = '20px';
+        widgetElement.style.zIndex = '1000';
         
+        // Add widget to DOM
+        document.body.appendChild(widgetElement);
+        
+        // Load script via Cloudflare Worker proxy
         const script = document.createElement('script');
-        script.src = scriptUrl;
+        script.src = 'https://proxy.aiix.pro/convai-widget-embed';
         script.async = true;
         script.defer = true;
         
         script.onload = () => {
-          console.log('✅ ElevenLabs widget loaded successfully via proxy');
+          console.log('✅ ElevenLabs widget loaded successfully via Cloudflare Worker');
           
-          // Initialize the widget
+          // Wait for widget initialization
           setTimeout(() => {
             const widget = document.querySelector('elevenlabs-convai');
             if (widget) {
-              console.log('🎯 Widget element found and initialized');
+              console.log('🎯 Widget initialized and ready');
               setIsLoaded(true);
               onLoad?.();
+            } else {
+              console.error('❌ Widget element not found after loading');
+              const err = new Error('Widget element not found');
+              setError(err);
+              onError?.(err);
             }
-          }, 1000);
+          }, 1500);
         };
         
-        script.onerror = (error) => {
-          console.error('❌ Failed to load widget via proxy:', error);
+        script.onerror = (event) => {
+          console.error('❌ Failed to load widget via Cloudflare Worker:', event);
           
-          // Fallback to direct loading if proxy fails
-          console.log('🔄 Trying direct loading as fallback...');
+          // Try direct loading as fallback
+          console.log('🔄 Trying direct loading from unpkg...');
           const fallbackScript = document.createElement('script');
           fallbackScript.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
           fallbackScript.async = true;
@@ -67,7 +79,8 @@ export const useElevenLabsWidget = ({
           };
           
           fallbackScript.onerror = () => {
-            const err = new Error('Both proxy and direct loading failed');
+            const err = new Error('Both proxy and direct loading failed - check network restrictions');
+            console.error('❌ All loading attempts failed:', err);
             setError(err);
             onError?.(err);
           };
@@ -79,16 +92,27 @@ export const useElevenLabsWidget = ({
         
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Unknown error');
+        console.error('❌ Widget loading error:', error);
         setError(error);
         onError?.(error);
       }
     };
 
-    // Load widget after DOM is ready
-    const timer = setTimeout(loadWidget, 500);
+    // Ensure DOM is ready before loading
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadWidget);
+    } else {
+      loadWidget();
+    }
     
-    return () => clearTimeout(timer);
-  }, [agentId, apiBaseUrl, onLoad, onError]);
+    return () => {
+      // Cleanup if needed
+      const existingScript = document.querySelector('script[src*="convai-widget-embed"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, [agentId, onLoad, onError]);
 
   return { isLoaded, error };
 };
