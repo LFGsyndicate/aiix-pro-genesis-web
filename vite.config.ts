@@ -10,8 +10,8 @@ export default defineConfig(({ mode }) => ({
     host: '::',
     port: 8080,
   },
-  // Определяем base path в зависимости от режима
-  base: mode === 'production' ? './' : '/',
+  // GitHub Pages deployment configuration
+  base: mode === 'production' ? '/aiix-pro-genesis-web-main/' : '/',
   plugins: [
     react(),
     mode === 'development' && componentTagger(), // Используется только при разработке
@@ -21,4 +21,18 @@ export default defineConfig(({ mode }) => ({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['@radix-ui/react-toast', '@radix-ui/react-dialog', '@radix-ui/react-tooltip']
+        }
+      }
+    }
+  }
 }));
