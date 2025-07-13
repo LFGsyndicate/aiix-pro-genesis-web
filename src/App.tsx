@@ -8,24 +8,14 @@ import NotFound from "./pages/NotFound";
 import { Helmet } from "react-helmet-async";
 import { useElevenLabsWidget } from "./hooks/use-elevenlabs-widget";
 
-// Объявление для TypeScript, чтобы он "понимал" тег виджета
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 
-        'agent-id'?: string; 
-      }, HTMLElement>;
-    }
-  }
-}
-
+// Professional ElevenLabs widget integration
 const queryClient = new QueryClient();
 
 const App = () => {
   const { isLoaded, error } = useElevenLabsWidget({
     agentId: "t1XU82nmJv5bSKHkNnQG",
-    onLoad: () => console.log('🎯 ElevenLabs widget initialized successfully'),
-    onError: (err) => console.error('❌ Widget failed to load:', err)
+    onLoad: () => console.log('✅ ElevenLabs widget fully operational'),
+    onError: (err) => console.error('❌ Widget failed:', err)
   });
 
   return (
@@ -63,26 +53,37 @@ const App = () => {
             </Routes>
           </HashRouter>
           
-          {/* ElevenLabs Widget - используем правильную конфигурацию для работы через прокси */}
-          <elevenlabs-convai
-            agent-id="t1XU82nmJv5bSKHkNnQG"
-            style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}
-          ></elevenlabs-convai>
-
-          {/* Debug info */}
-          {error && (
-            <div style={{ 
-              position: 'fixed', 
-              top: '20px', 
-              right: '20px', 
-              background: 'red', 
-              color: 'white', 
-              padding: '10px',
-              zIndex: 1001,
+          {/* Professional loading indicator */}
+          {!isLoaded && !error && (
+            <div style={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              background: '#007bff',
+              color: 'white',
+              padding: '10px 15px',
               borderRadius: '5px',
-              fontSize: '12px'
+              fontSize: '12px',
+              zIndex: 1000
             }}>
-              Widget Error: {error.message}
+              Loading AI Assistant...
+            </div>
+          )}
+          
+          {/* Error indicator */}
+          {error && (
+            <div style={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              background: '#dc3545',
+              color: 'white',
+              padding: '10px 15px',
+              borderRadius: '5px',
+              fontSize: '12px',
+              zIndex: 1000
+            }}>
+              AI Assistant unavailable
             </div>
           )}
         </TooltipProvider>
