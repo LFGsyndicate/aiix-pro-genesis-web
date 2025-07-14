@@ -37,12 +37,12 @@ const Footer: React.FC = () => {
               <a href="https://t.me/aiixprof" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Send size={20} />
               </a>
-              <a href="https://youtube.com/@aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
+              {/* <a href="https://youtube.com/@aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Youtube size={20} />
               </a>
               <a href="https://instagram.com/aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Instagram size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

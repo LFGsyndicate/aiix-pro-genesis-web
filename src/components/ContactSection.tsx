@@ -31,12 +31,12 @@ const ContactSection: React.FC = () => {
             <a href="https://wa.me/79097878786" target="_blank" rel="noopener noreferrer" className="social-icon">
               <MessageCircle size={26} />
             </a>
-            <a href="https://www.youtube.com/@aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
+            {/* <a href="https://www.youtube.com/@aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Youtube size={26} />
             </a>
             <a href="https://www.instagram.com/aiixpro" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Instagram size={26} />
-            </a>
+            </a> */}
           </div>
           
           <a 
