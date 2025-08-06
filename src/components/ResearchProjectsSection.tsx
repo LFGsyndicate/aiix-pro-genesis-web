@@ -74,9 +74,10 @@ const ResearchProjectsSection: React.FC = () => {
                   <a href={project.id === 'expansion-podcast' ? (language === 'en' ? 'https://t.me/xxpnsn' : 'https://t.me/expansiia') : project.link} target="_blank" rel="noopener noreferrer" className="block">
                     <AspectRatio ratio={16 / 9} className="bg-muted hover:opacity-90 transition-opacity">
                       <img 
-                        src={project.id === 'expansion-podcast' ? (language === 'en' ? '/lovable-uploads/xpnsn.png' : '/lovable-uploads/expansia.png') : project.imageUrl}
+                        src={project.id === 'expansion-podcast' ? (language === 'en' ? '/lovable-uploads/ba75dcf4-54ee-40bc-a8e9-d577e7b3c705.png' : '/lovable-uploads/98257781-5b01-49bf-b8d0-7c0cdb135f53.png') : project.imageUrl}
                         alt={language === 'en' ? project.title : (project.titleRu || project.title)} 
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full loading-lazy"
+                        loading="lazy"
                       />
                     </AspectRatio>
                   </a>
