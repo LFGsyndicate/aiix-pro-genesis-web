@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ResearchProjectsSection from '../components/ResearchProjectsSection';
+import CasesSection from '../components/CasesSection';
 import BenefitsSection from '../components/BenefitsSection';
 import UseCasesSection from '../components/UseCasesSection';
 import ApproachSection from '../components/ApproachSection';
@@ -91,6 +92,8 @@ const Index = () => {
         <AboutSection />
         <Separator />
         <ResearchProjectsSection />
+        <Separator />
+        <CasesSection />
         <Separator />
         <BenefitsSection />
         <Separator />

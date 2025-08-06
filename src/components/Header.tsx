@@ -80,6 +80,9 @@ const Header: React.FC<HeaderProps> = () => {
           <a onClick={() => scrollToSection('about')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
             {language === 'en' ? 'About' : 'О нас'}
           </a>
+          <a onClick={() => scrollToSection('cases')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
+            {language === 'en' ? 'Our Cases' : 'Наши кейсы'}
+          </a>
           <a onClick={() => scrollToSection('benefits')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
             {language === 'en' ? 'Benefits' : 'Преимущества'}
           </a>
@@ -117,6 +120,9 @@ const Header: React.FC<HeaderProps> = () => {
             </a>
             <a onClick={() => scrollToSection('about')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
               {language === 'en' ? 'About' : 'О нас'}
+            </a>
+            <a onClick={() => scrollToSection('cases')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
+              {language === 'en' ? 'Our Cases' : 'Наши кейсы'}
             </a>
             <a onClick={() => scrollToSection('benefits')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
               {language === 'en' ? 'Benefits' : 'Преимущества'}
