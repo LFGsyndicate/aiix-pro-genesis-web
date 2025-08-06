@@ -72,7 +72,14 @@ export default {
 					cyan: 'hsl(var(--aiix-cyan))',
 					lightgray: 'hsl(var(--aiix-lightgray))',
 					gray: 'hsl(var(--aiix-gray))',
+<<<<<<< HEAD
 				}
+=======
+				},
+				// Gradient colors for cases
+				'gradient-start': '#6366f1',
+				'gradient-end': '#8b5cf6'
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

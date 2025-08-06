@@ -235,3 +235,105 @@ a.learn-more-btn:hover,
 .ru-content p, .ru-content li {
   line-height: 1.5;
 }
+<<<<<<< HEAD
+=======
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+  .section-container {
+    @apply px-4 py-8;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix horizontal overflow */
+  body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  /* Cases section mobile fixes */
+  #cases .grid {
+    @apply grid-cols-1 gap-4;
+  }
+  
+  #cases .card {
+    @apply w-full;
+    max-width: 100%;
+  }
+  
+  #cases img {
+    @apply w-full h-auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  
+  /* Technology carousel mobile fixes */
+  .carousel-content {
+    @apply -ml-2;
+  }
+  
+  .carousel-item {
+    @apply pl-2 basis-full;
+  }
+  
+  /* Ensure cards don't overflow */
+  .card {
+    @apply w-full;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Fix button sizing on mobile */
+  .btn-primary, .btn-secondary {
+    @apply px-4 py-2 text-sm;
+    min-height: 44px;
+  }
+  
+  /* Technology stack cards mobile optimization */
+  .carousel-item .card {
+    min-height: 180px;
+  }
+  
+  .carousel-item .card img {
+    max-width: 48px;
+    max-height: 48px;
+  }
+  
+  /* Case study cards mobile optimization */
+  #cases .card .grid {
+    @apply grid-cols-1 gap-4;
+  }
+  
+  #cases .badge {
+    @apply text-xs px-2 py-1;
+  }
+}
+
+/* Tablet responsiveness fixes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-container {
+    @apply px-6 py-12;
+  }
+  
+  /* Technology carousel tablet fixes */
+  .carousel-item {
+    @apply basis-1/2;
+  }
+  
+  /* Cases section tablet fixes */
+  #cases .card .grid {
+    @apply grid-cols-1 gap-6;
+  }
+}
+
+/* Prevent horizontal scroll */
+* {
+  box-sizing: border-box;
+}
+
+.container, .section-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)

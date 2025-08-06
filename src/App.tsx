@@ -35,22 +35,39 @@ const App = () => {
   return (
     <>
       <Helmet>
+<<<<<<< HEAD
         <title>AIix Pro - Leading AI Agent Development Company | Custom AI Solutions</title>
         <meta name="description" content="AIix Pro specializes in developing custom AI agents for business automation. Our intelligent solutions help streamline workflows and boost efficiency. Explore our research on DAO-AI symbiosis and 700+ AI startup ideas." />
+=======
+        <title>AIix Pro - Leading AI Agent Development Company | 35+ Successful Cases | Web3 & DeFi Solutions</title>
+        <meta name="description" content="AIix Pro - Expert AI agent development for Web3, DeFi, and enterprise solutions. 35+ successful cases including ZK-proofs, DAO governance, cross-chain arbitrage, and blockchain automation. Custom AI agents for business transformation." />
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
         <meta name="author" content="AIix Pro by DAO LFGsyndicate" />
         <meta name="yandex-verification" content="7eb55b598c9b3ea0" />
         <link rel="apple-touch-icon" href="/lovable-uploads/84f45935-2e31-4f27-8104-7930d474c556.png" />
         <meta property="og:type" content="website" />
+<<<<<<< HEAD
         <meta property="og:title" content="AIix Pro - Leading AI Agent Development Company" />
         <meta property="og:description" content="Transform your business with custom AI agents." />
+=======
+        <meta property="og:title" content="AIix Pro - Leading AI Agent Development Company | 35+ Successful Cases" />
+        <meta property="og:description" content="Expert AI agent development for Web3, DeFi, and enterprise solutions. 35+ successful cases including ZK-proofs, DAO governance, and blockchain automation." />
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
         <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
         <meta property="og:url" content="https://aiix.pro" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@aiixpro" />
+<<<<<<< HEAD
         <meta name="twitter:title" content="AIix Pro - Custom AI Agent Development" />
         <meta name="twitter:description" content="Transform your business with custom AI agents." />
         <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
         <meta name="keywords" content="AI agents, artificial intelligence, custom AI solutions, business automation, AI development, machine learning, workflow automation, intelligent agents" />
+=======
+        <meta name="twitter:title" content="AIix Pro - AI Agent Development | Web3 & DeFi Solutions" />
+        <meta name="twitter:description" content="35+ successful AI agent implementations for Web3, DeFi, and enterprise automation. Expert blockchain and AI development services." />
+        <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+        <meta name="keywords" content="AI agents, Web3 development, DeFi solutions, blockchain automation, ZK proofs, DAO governance, smart contracts, cross-chain arbitrage, AI development, machine learning, custom AI solutions, enterprise automation, Solana development, Ethereum development, TON blockchain, artificial intelligence consulting" />
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://aiix.pro" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from './ui/button';
+<<<<<<< HEAD
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
@@ -123,6 +124,12 @@ const cases: Case[] = [
     imageUrl: case05
   }
 ];
+=======
+import { Card, CardContent, CardTitle } from './ui/card';
+import { Badge } from './ui/badge';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import { cases, technologies } from '../data/casesData';
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
 
 const CasesSection: React.FC = () => {
   const { language } = useLanguage();
@@ -157,12 +164,40 @@ const CasesSection: React.FC = () => {
           <Carousel className="w-full max-w-6xl mx-auto">
             <CarouselContent className="-ml-1">
               {technologies.map((tech, index) => (
+<<<<<<< HEAD
                 <CarouselItem key={index} className="pl-1 basis-1/2 md:basis-1/3 lg:basis-1/5">
                   <div className="p-1">
                     <Card className="h-full">
                       <CardContent className="flex flex-col items-center justify-center p-4 text-center">
                         <h4 className="font-semibold text-sm mb-2">{tech.name}</h4>
                         <p className="text-xs text-muted-foreground line-clamp-3">{tech.description}</p>
+=======
+                <CarouselItem key={index} className="pl-1 basis-1/1 md:basis-1/2">
+                  <div className="p-1">
+                    <Card className="h-full min-h-[200px]">
+                      <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
+                        <div className="w-16 h-16 mb-4 flex items-center justify-center">
+                          <img 
+                            src={tech.logoUrl} 
+                            alt={tech.name}
+                            className="max-w-full max-h-full object-contain"
+                            onError={(e) => {
+                              // Fallback to text if logo fails to load
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `<div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold text-xs">${tech.name}</div>`;
+                              }
+                            }}
+                          />
+                        </div>
+                        <h4 className="font-semibold text-sm mb-3">{tech.name}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          <span className="en-content">{tech.description}</span>
+                          <span className="ru-content">{tech.descriptionRu}</span>
+                        </p>
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
                       </CardContent>
                     </Card>
                   </div>
@@ -180,6 +215,7 @@ const CasesSection: React.FC = () => {
             <Card key={caseItem.id} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-0">
+<<<<<<< HEAD
                   <div className="h-full bg-muted">
                     <img 
                       src={caseItem.imageUrl}
@@ -187,6 +223,12 @@ const CasesSection: React.FC = () => {
                       className="object-cover w-full h-full min-h-[300px]"
                       loading="lazy"
                     />
+=======
+                  <div className={`h-full bg-gradient-to-r ${caseItem.gradientColors} min-h-[55px] flex items-center justify-center`}>
+                    <div className="text-white font-bold text-lg opacity-80">
+                      Case {String(index + 1).padStart(2, '0')}
+                    </div>
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
                   </div>
                 </div>
                 <div className="flex flex-col justify-between p-6">
@@ -245,6 +287,23 @@ const CasesSection: React.FC = () => {
                       
                       <div>
                         <h4 className="font-semibold text-sm mb-2">
+<<<<<<< HEAD
+=======
+                          <span className="en-content">Competencies:</span>
+                          <span className="ru-content">Компетенции:</span>
+                        </h4>
+                        <div className="flex flex-wrap gap-1">
+                          {caseItem.competencies.map((competency) => (
+                            <Badge key={competency} variant="secondary" className="text-xs">
+                              {competency}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-sm mb-2">
+>>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
                           <span className="en-content">The Outcome:</span>
                           <span className="ru-content">Результат:</span>
                         </h4>
