@@ -235,8 +235,6 @@ a.learn-more-btn:hover,
 .ru-content p, .ru-content li {
   line-height: 1.5;
 }
-<<<<<<< HEAD
-=======
 
 /* Mobile responsiveness fixes */
 @media (max-width: 768px) {
@@ -336,4 +334,3 @@ a.learn-more-btn:hover,
   max-width: 100%;
   overflow-x: hidden;
 }
->>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)

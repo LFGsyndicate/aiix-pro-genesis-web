@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X } from 'lucide-react';
@@ -89,12 +85,6 @@ const Header: React.FC<HeaderProps> = () => {
           <a onClick={() => scrollToSection('benefits')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
             {language === 'en' ? 'Benefits' : 'Преимущества'}
           </a>
-<<<<<<< HEAD
-          <a onClick={() => scrollToSection('use-cases')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
-            {language === 'en' ? 'Use Cases' : 'Применения'}
-          </a>
-=======
->>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
           <a onClick={() => scrollToSection('approach')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
             {language === 'en' ? 'Approach' : 'Подход'}
           </a>
@@ -133,12 +123,6 @@ const Header: React.FC<HeaderProps> = () => {
             <a onClick={() => scrollToSection('benefits')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
               {language === 'en' ? 'Benefits' : 'Преимущества'}
             </a>
-<<<<<<< HEAD
-            <a onClick={() => scrollToSection('use-cases')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
-              {language === 'en' ? 'Use Cases' : 'Применения'}
-            </a>
-=======
->>>>>>> 1b9cdb2 (Обновлены контакты и меню: новые ссылки, удалён Use Cases)
             <a onClick={() => scrollToSection('approach')} className="text-white hover:text-aiix-cyan cursor-pointer transition-colors nav-menu-text">
               {language === 'en' ? 'Approach' : 'Подход'}
             </a>

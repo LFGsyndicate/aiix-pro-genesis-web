@@ -8,7 +8,6 @@ import AboutSection from '../components/AboutSection';
 import ResearchProjectsSection from '../components/ResearchProjectsSection';
 import CasesSection from '../components/CasesSection';
 import BenefitsSection from '../components/BenefitsSection';
-import UseCasesSection from '../components/UseCasesSection';
 import ApproachSection from '../components/ApproachSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import FaqSection from '../components/FaqSection';
@@ -96,8 +95,6 @@ const Index = () => {
         <CasesSection />
         <Separator />
         <BenefitsSection />
-        <Separator />
-        <UseCasesSection />
         <Separator />
         <ApproachSection />
         <Separator />
