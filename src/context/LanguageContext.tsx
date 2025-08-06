@@ -11,10 +11,30 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const getInitialLanguage = (): Language => {
+    // Check if language preference is saved in localStorage
+    const savedLanguage = localStorage.getItem('preferred-language');
+    if (savedLanguage === 'en' || savedLanguage === 'ru') {
+      return savedLanguage as Language;
+    }
+    
+    // Auto-detect browser/OS language
+    const browserLanguage = navigator.language || navigator.languages?.[0] || 'en';
+    const languageCode = browserLanguage.toLowerCase();
+    
+    // If Russian language detected, return 'ru', otherwise default to 'en'
+    return languageCode.startsWith('ru') ? 'ru' : 'en';
+  };
+
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
+
+  const handleSetLanguage = (newLanguage: Language) => {
+    setLanguage(newLanguage);
+    localStorage.setItem('preferred-language', newLanguage);
+  };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

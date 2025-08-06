@@ -18,6 +18,15 @@ interface ResearchProject {
 
 const projects: ResearchProject[] = [
   {
+    id: 'expansion-podcast',
+    title: 'Expansion Podcast',
+    titleRu: 'Подкаст Экспансия',
+    description: 'Expansion—a podcast where we translate the language of AI & Web3 into the language of common sense. We break down complex topics simply, quickly & with purpose. Want to understand what\'s really happening and how you can use it?',
+    descriptionRu: '«Экспансия» — подкаст, где мы переводим язык AI и блокчейна на язык здравого смысла. Разбираем сложные темы просто, быстро и по делу. Хочешь понять, что происходит на самом деле и как это использовать?',
+    imageUrl: '/lovable-uploads/xpnsn.png',
+    link: 'https://t.me/xxpnsn'
+  },
+  {
     id: '700-ai-startup-ideas',
     title: '700 AI Startup Ideas: A Compendium of Real-World Generative AI Applications',
     titleRu: '700 идей AI-стартапов: сборник приложений генеративного ИИ в реальном мире',
@@ -62,10 +71,10 @@ const ResearchProjectsSection: React.FC = () => {
             <Card key={project.id} className="overflow-hidden border-0 shadow-lg">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-0">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                  <a href={project.id === 'expansion-podcast' ? (language === 'en' ? 'https://t.me/xxpnsn' : 'https://t.me/expansiia') : project.link} target="_blank" rel="noopener noreferrer" className="block">
                     <AspectRatio ratio={16 / 9} className="bg-muted hover:opacity-90 transition-opacity">
                       <img 
-                        src={project.imageUrl} 
+                        src={project.id === 'expansion-podcast' ? (language === 'en' ? '/lovable-uploads/xpnsn.png' : '/lovable-uploads/expansia.png') : project.imageUrl}
                         alt={language === 'en' ? project.title : (project.titleRu || project.title)} 
                         className="object-cover w-full h-full"
                       />
@@ -85,7 +94,7 @@ const ResearchProjectsSection: React.FC = () => {
                   </div>
                   <div>
                     <Button asChild className="bg-aiix-cyan hover:bg-aiix-magenta">
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <a href={project.id === 'expansion-podcast' ? (language === 'en' ? 'https://t.me/xxpnsn' : 'https://t.me/expansiia') : project.link} target="_blank" rel="noopener noreferrer">
                         <span className="en-content">Learn More</span>
                         <span className="ru-content">Узнать больше</span>
                         <ArrowRight className="ml-2" size={16} />
