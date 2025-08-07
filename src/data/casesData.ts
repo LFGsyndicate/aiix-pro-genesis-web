@@ -27,7 +27,7 @@ export interface Case {
           name: 'OpenAI',
           description: 'For state-of-the-art Large Language Models (GPT series) and core reasoning capabilities.',
           descriptionRu: 'Для современных больших языковых моделей (серия GPT) и основных возможностей рассуждения.',
-          logoUrl: '/lovable-uploads/70231e0a-2cb1-4620-b316-c6ee8f81e211.png'
+          logoUrl: '/lovable-uploads/f1f5abd4-fe73-4754-93b0-5fbfe4540df5.png'
       },
       {
           name: 'Google Cloud',
@@ -51,7 +51,7 @@ export interface Case {
           name: 'The Graph',
           description: 'The standard protocol for indexing and querying data from blockchains like Ethereum and Solana.',
           descriptionRu: 'Стандартный протокол для индексации и запроса данных из блокчейнов, таких как Ethereum и Solana.',
-          logoUrl: '/lovable-uploads/f1f5abd4-fe73-4754-93b0-5fbfe4540df5.png'
+          logoUrl: '/lovable-uploads/70231e0a-2cb1-4620-b316-c6ee8f81e211.png'
       },
       {
           name: 'LangChain',
