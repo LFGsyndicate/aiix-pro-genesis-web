@@ -27,7 +27,7 @@ export interface Case {
           name: 'OpenAI',
           description: 'For state-of-the-art Large Language Models (GPT series) and core reasoning capabilities.',
           descriptionRu: 'Для современных больших языковых моделей (серия GPT) и основных возможностей рассуждения.',
-          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg'
+          logoUrl: '/lovable-uploads/70231e0a-2cb1-4620-b316-c6ee8f81e211.png'
       },
       {
           name: 'Google Cloud',
@@ -45,13 +45,13 @@ export interface Case {
           name: 'Chainlink',
           description: 'The industry standard for decentralized oracle networks, connecting smart contracts to real-world data.',
           descriptionRu: 'Отраслевой стандарт для децентрализованных сетей оракулов, соединяющих смарт-контракты с данными реального мира.',
-          logoUrl: 'https://cryptologos.cc/logos/chainlink-link-logo.svg'
+          logoUrl: '/lovable-uploads/3a9e88a1-868d-40c7-9c8b-720e4dc89da9.png'
       },
       {
           name: 'The Graph',
           description: 'The standard protocol for indexing and querying data from blockchains like Ethereum and Solana.',
           descriptionRu: 'Стандартный протокол для индексации и запроса данных из блокчейнов, таких как Ethereum и Solana.',
-          logoUrl: 'https://cryptologos.cc/logos/the-graph-grt-logo.svg'
+          logoUrl: '/lovable-uploads/f1f5abd4-fe73-4754-93b0-5fbfe4540df5.png'
       },
       {
           name: 'LangChain',
@@ -75,7 +75,7 @@ export interface Case {
           name: 'OpenZeppelin',
           description: 'The gold standard for secure, audited, and community-vetted smart contract libraries for the EVM.',
           descriptionRu: 'Золотой стандарт для безопасных, проверенных и одобренных сообществом библиотек смарт-контрактов для EVM.',
-          logoUrl: 'https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/logo.svg'
+          logoUrl: '/lovable-uploads/9e6b541a-b28a-4b53-977a-50e6c97ce500.png'
       },
       {
           name: 'Hardhat & Foundry',
@@ -111,7 +111,7 @@ export interface Case {
           name: 'Anthropic (Claude)',
           description: 'For access to alternative, safety-focused large language models, providing flexibility and depth to our AI solutions.',
           descriptionRu: 'Для доступа к альтернативным, ориентированным на безопасность большим языковым моделям, обеспечивающим гибкость и глубину наших AI-решений.',
-          logoUrl: 'https://www.anthropic.com/images/icons/anthropic-logomark.svg'
+          logoUrl: '/lovable-uploads/6cbed245-08a8-4d49-9635-0b3f25a6af00.png'
       },
       {
           name: 'React',
@@ -153,7 +153,7 @@ export interface Case {
           name: 'Rust',
           description: 'Systems programming language focused on safety, speed, and concurrency, ideal for blockchain development.',
           descriptionRu: 'Системный язык программирования, сосредоточенный на безопасности, скорости и параллелизме, идеальный для разработки блокчейна.',
-          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg'
+          logoUrl: '/lovable-uploads/afa6856b-ebec-4093-a827-9889ec029bc0.png'
       },
       {
           name: 'MongoDB',
@@ -183,19 +183,19 @@ export interface Case {
           name: 'Ethereum',
           description: 'Decentralized platform that runs smart contracts and serves as the foundation for decentralized applications.',
           descriptionRu: 'Децентрализованная платформа, которая выполняет смарт-контракты и служит основой для децентрализованных приложений.',
-          logoUrl: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg'
+          logoUrl: '/lovable-uploads/bbe19953-54fa-4ea5-aa20-bb28e4a942cf.png'
       },
       {
           name: 'Solana',
           description: 'High-performance blockchain supporting builders around the world creating crypto apps that scale.',
           descriptionRu: 'Высокопроизводительный блокчейн, поддерживающий разработчиков по всему миру в создании масштабируемых криптоприложений.',
-          logoUrl: 'https://cryptologos.cc/logos/solana-sol-logo.svg'
+          logoUrl: '/lovable-uploads/c1f608f4-6549-4c87-b0a6-69b5219e3367.png'
       },
       {
           name: 'TON',
           description: 'The Open Network is a decentralized and open internet platform made up of several components.',
           descriptionRu: 'The Open Network - это децентрализованная и открытая интернет-платформа, состоящая из нескольких компонентов.',
-          logoUrl: 'https://cryptologos.cc/logos/toncoin-ton-logo.svg'
+          logoUrl: '/lovable-uploads/22674764-305e-47a0-8fd5-1bc0899744b1.png'
       },
       {
           name: 'Supabase',
@@ -231,7 +231,7 @@ export interface Case {
           name: 'Tailwind CSS',
           description: 'A utility-first CSS framework packed with classes to build any design, directly in your markup.',
           descriptionRu: 'CSS-фреймворк, ориентированный на утилиты, с классами для создания любого дизайна прямо в разметке.',
-          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+          logoUrl: '/lovable-uploads/1485691e-e9ac-456b-b8a6-df401886be33.png'
       },
       {
           name: 'Vite',
