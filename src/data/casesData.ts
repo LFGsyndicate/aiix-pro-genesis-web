@@ -196,6 +196,48 @@ export interface Case {
           description: 'The Open Network is a decentralized and open internet platform made up of several components.',
           descriptionRu: 'The Open Network - это децентрализованная и открытая интернет-платформа, состоящая из нескольких компонентов.',
           logoUrl: 'https://cryptologos.cc/logos/toncoin-ton-logo.svg'
+      },
+      {
+          name: 'Supabase',
+          description: 'The open source Firebase alternative. Instant APIs, Edge Functions, Realtime subscriptions, and Storage.',
+          descriptionRu: 'Открытая альтернатива Firebase. Мгновенные API, Edge Functions, подписки в реальном времени и хранилище.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg'
+      },
+      {
+          name: 'Elixir',
+          description: 'Dynamic, functional language designed for building maintainable and scalable applications.',
+          descriptionRu: 'Динамический функциональный язык, разработанный для создания поддерживаемых и масштабируемых приложений.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg'
+      },
+      {
+          name: 'FastAPI',
+          description: 'Modern, fast web framework for building APIs with Python 3.7+ based on standard Python type hints.',
+          descriptionRu: 'Современный, быстрый веб-фреймворк для создания API с Python 3.7+ на основе стандартных подсказок типов Python.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg'
+      },
+      {
+          name: 'GraphQL',
+          description: 'A query language for APIs and a runtime for fulfilling those queries with your existing data.',
+          descriptionRu: 'Язык запросов для API и среда выполнения для выполнения этих запросов с существующими данными.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg'
+      },
+      {
+          name: 'Prisma',
+          description: 'Next-generation Node.js and TypeScript ORM for PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite.',
+          descriptionRu: 'ORM нового поколения для Node.js и TypeScript для PostgreSQL, MySQL, MariaDB, SQL Server и SQLite.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg'
+      },
+      {
+          name: 'Tailwind CSS',
+          description: 'A utility-first CSS framework packed with classes to build any design, directly in your markup.',
+          descriptionRu: 'CSS-фреймворк, ориентированный на утилиты, с классами для создания любого дизайна прямо в разметке.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+      },
+      {
+          name: 'Vite',
+          description: 'Next generation frontend tooling. Fast, opinionated web dev build tool that serves code via native ES modules.',
+          descriptionRu: 'Инструментарий фронтенда нового поколения. Быстрый инструмент сборки для веб-разработки, который обслуживает код через нативные ES-модули.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg'
       }
   ];
   
