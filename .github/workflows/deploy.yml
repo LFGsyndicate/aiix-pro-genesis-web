@@ -1,0 +1,70 @@
+# Имя workflow
+name: Deploy Vite site to Pages
+
+on:
+  # Запускается при push в ветку 'main'
+  push:
+    branches: ['main']
+
+  # Позволяет запустить этот workflow вручную со страницы Actions
+  workflow_dispatch:
+
+# Права доступа для токена GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Настройки параллелизма, чтобы новый коммит отменял старую сборку
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  # --- ЗАДАЧА СБОРКИ ---
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # Используем актуальную LTS-версию Node.js
+          cache: 'npm'   # Включаем кэширование для ускорения установки зависимостей
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      # ======== ДИАГНОСТИЧЕСКИЙ ШАГ ========
+      # Этот шаг выведет в лог список всех файлов после сборки,
+      # чтобы мы могли увидеть, создается ли папка 'dist'.
+      - name: List files in the repository
+        run: |
+          echo "--- The content of the root directory after build is: ---"
+          ls -R
+      # ======================================
+
+      - name: Upload artifact
+        # Этот шаг должен выполняться ПОСЛЕ диагностики
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Указываем, что нужно загрузить именно папку 'dist',
+          # которая создается на шаге 'npm run build'.
+          path: './dist'
+
+  # --- ЗАДАЧА ДЕПЛОЯ ---
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build # Эта задача ждет успешного завершения задачи 'build'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # Этот экшен автоматически подхватит артефакт, созданный на шаге 'build'

@@ -1,0 +1,40 @@
+
+# Allow all crawlers for main domain
+User-agent: *
+Allow: /
+
+# Block access to n8n backend subdomain
+User-agent: *
+Disallow: http://n8n.aiix.pro/
+Disallow: https://n8n.aiix.pro/
+
+# Specify sitemap location
+Sitemap: https://aiix.pro/sitemap.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: http://n8n.aiix.pro/
+Disallow: https://n8n.aiix.pro/
+
+User-agent: Bingbot
+Allow: /
+Disallow: http://n8n.aiix.pro/
+Disallow: https://n8n.aiix.pro/
+
+User-agent: Yandexbot
+Allow: /
+Disallow: http://n8n.aiix.pro/
+Disallow: https://n8n.aiix.pro/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: http://n8n.aiix.pro/
+Disallow: https://n8n.aiix.pro/
+
+# Social media crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
