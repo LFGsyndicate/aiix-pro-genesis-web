@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Send, MessageCircle, Youtube, Instagram } from "lucide-react";
+import { Send, MessageCircle } from "lucide-react";
 
 const ContactSection: React.FC = () => {
   const { language } = useLanguage();
