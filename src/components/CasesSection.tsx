@@ -39,11 +39,11 @@ const CasesSection: React.FC = () => {
           <Carousel className="w-full max-w-6xl mx-auto">
             <CarouselContent className="-ml-1">
               {technologies.map((tech, index) => (
-                <CarouselItem key={index} className="pl-1 basis-1/1 md:basis-1/2">
+                <CarouselItem key={index} className="pl-1 basis-full md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <Card className="h-full min-h-[200px]">
-                      <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-                        <div className="w-16 h-16 mb-4 flex items-center justify-center">
+                    <Card className="h-full min-h-[180px]">
+                      <CardContent className="flex flex-col items-center justify-center p-4 text-center h-full">
+                        <div className="w-12 h-12 mb-3 flex items-center justify-center">
                           <img 
                             src={tech.logoUrl} 
                             alt={tech.name}
@@ -54,12 +54,12 @@ const CasesSection: React.FC = () => {
                               target.style.display = 'none';
                               const parent = target.parentElement;
                               if (parent) {
-                                parent.innerHTML = `<div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold text-xs">${tech.name}</div>`;
+                                parent.innerHTML = `<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold text-xs">${tech.name}</div>`;
                               }
                             }}
                           />
                         </div>
-                        <h4 className="font-semibold text-sm mb-3">{tech.name}</h4>
+                        <h4 className="font-semibold text-xs mb-2">{tech.name}</h4>
                         <p className="text-xs text-muted-foreground leading-relaxed">
                           <span className="en-content">{tech.description}</span>
                           <span className="ru-content">{tech.descriptionRu}</span>
@@ -76,95 +76,94 @@ const CasesSection: React.FC = () => {
         </div>
 
         {/* Cases Grid */}
-        <div className="grid md:grid-cols-1 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
           {cases.slice(0, visibleCases).map((caseItem, index) => (
             <Card key={caseItem.id} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="p-0">
-                  <div className={`h-full bg-gradient-to-r ${caseItem.gradientColors} min-h-[55px] flex items-center justify-center`}>
-                    <div className="text-white font-bold text-lg opacity-80">
-                      Case {String(index + 1).padStart(2, '0')}
-                    </div>
+              <div className="flex flex-col">
+                {/* Header bar with case number */}
+                <div className={`bg-gradient-to-r ${caseItem.gradientColors} h-[55px] flex items-center justify-center`}>
+                  <div className="text-white font-bold text-lg opacity-90">
+                    Case {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
-                <div className="flex flex-col justify-between p-6">
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <Badge variant="outline" className="text-xs">
-                        Case {String(index + 1).padStart(2, '0')}
-                      </Badge>
-                      <Badge variant="secondary" className="text-xs">
-                        <span className="en-content">{caseItem.client}</span>
-                        <span className="ru-content">{caseItem.clientRu}</span>
-                      </Badge>
+                
+                {/* Case content */}
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Badge variant="outline" className="text-xs">
+                      Case {String(index + 1).padStart(2, '0')}
+                    </Badge>
+                    <Badge variant="secondary" className="text-xs">
+                      <span className="en-content">{caseItem.client}</span>
+                      <span className="ru-content">{caseItem.clientRu}</span>
+                    </Badge>
+                  </div>
+                  
+                  <CardTitle className="text-lg mb-4 leading-tight">
+                    <span className="en-content">{caseItem.title}</span>
+                    <span className="ru-content">{caseItem.titleRu}</span>
+                  </CardTitle>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2">
+                        <span className="en-content">The Challenge:</span>
+                        <span className="ru-content">Вызов:</span>
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        <span className="en-content">{caseItem.challenge}</span>
+                        <span className="ru-content">{caseItem.challengeRu}</span>
+                      </p>
                     </div>
                     
-                    <CardTitle className="text-xl mb-4 leading-tight">
-                      <span className="en-content">{caseItem.title}</span>
-                      <span className="ru-content">{caseItem.titleRu}</span>
-                    </CardTitle>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2">
+                        <span className="en-content">Our Solution:</span>
+                        <span className="ru-content">Наше решение:</span>
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        <span className="en-content">{caseItem.solution}</span>
+                        <span className="ru-content">{caseItem.solutionRu}</span>
+                      </p>
+                    </div>
                     
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2">
-                          <span className="en-content">The Challenge:</span>
-                          <span className="ru-content">Вызов:</span>
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          <span className="en-content">{caseItem.challenge}</span>
-                          <span className="ru-content">{caseItem.challengeRu}</span>
-                        </p>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2">
+                        <span className="en-content">Key Technologies:</span>
+                        <span className="ru-content">Ключевые технологии:</span>
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {caseItem.technologies.map((tech) => (
+                          <Badge key={tech} variant="outline" className="text-xs">
+                            {tech}
+                          </Badge>
+                        ))}
                       </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2">
-                          <span className="en-content">Our Solution:</span>
-                          <span className="ru-content">Наше решение:</span>
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          <span className="en-content">{caseItem.solution}</span>
-                          <span className="ru-content">{caseItem.solutionRu}</span>
-                        </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2">
+                        <span className="en-content">Competencies:</span>
+                        <span className="ru-content">Компетенции:</span>
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {caseItem.competencies.map((competency) => (
+                          <Badge key={competency} variant="secondary" className="text-xs">
+                            {competency}
+                          </Badge>
+                        ))}
                       </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2">
-                          <span className="en-content">Key Technologies:</span>
-                          <span className="ru-content">Ключевые технологии:</span>
-                        </h4>
-                        <div className="flex flex-wrap gap-1">
-                          {caseItem.technologies.map((tech) => (
-                            <Badge key={tech} variant="outline" className="text-xs">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2">
-                          <span className="en-content">Competencies:</span>
-                          <span className="ru-content">Компетенции:</span>
-                        </h4>
-                        <div className="flex flex-wrap gap-1">
-                          {caseItem.competencies.map((competency) => (
-                            <Badge key={competency} variant="secondary" className="text-xs">
-                              {competency}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2">
-                          <span className="en-content">The Outcome:</span>
-                          <span className="ru-content">Результат:</span>
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          <span className="en-content">{caseItem.outcome}</span>
-                          <span className="ru-content">{caseItem.outcomeRu}</span>
-                        </p>
-                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2">
+                        <span className="en-content">The Outcome:</span>
+                        <span className="ru-content">Результат:</span>
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        <span className="en-content">{caseItem.outcome}</span>
+                        <span className="ru-content">{caseItem.outcomeRu}</span>
+                      </p>
                     </div>
                   </div>
                 </div>

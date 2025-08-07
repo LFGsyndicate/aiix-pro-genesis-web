@@ -290,12 +290,17 @@ a.learn-more-btn:hover,
   
   /* Technology stack cards mobile optimization */
   .carousel-item .card {
-    min-height: 180px;
+    min-height: 160px;
   }
   
   .carousel-item .card img {
-    max-width: 48px;
-    max-height: 48px;
+    max-width: 40px;
+    max-height: 40px;
+  }
+  
+  /* Cases section mobile fixes */
+  #cases .grid {
+    @apply grid-cols-1 gap-4;
   }
   
   /* Case study cards mobile optimization */

@@ -112,6 +112,90 @@ export interface Case {
           description: 'For access to alternative, safety-focused large language models, providing flexibility and depth to our AI solutions.',
           descriptionRu: 'Для доступа к альтернативным, ориентированным на безопасность большим языковым моделям, обеспечивающим гибкость и глубину наших AI-решений.',
           logoUrl: 'https://www.anthropic.com/images/icons/anthropic-logomark.svg'
+      },
+      {
+          name: 'React',
+          description: 'The leading JavaScript library for building user interfaces and modern web applications.',
+          descriptionRu: 'Ведущая JavaScript библиотека для создания пользовательских интерфейсов и современных веб-приложений.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+      },
+      {
+          name: 'Next.js',
+          description: 'The React framework for production-grade applications with server-side rendering and static generation.',
+          descriptionRu: 'React фреймворк для продакшн-приложений с серверным рендерингом и статической генерацией.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
+      },
+      {
+          name: 'TypeScript',
+          description: 'Strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.',
+          descriptionRu: 'Строго типизированный язык программирования, основанный на JavaScript, обеспечивающий лучшие инструменты для любого масштаба.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+      },
+      {
+          name: 'Node.js',
+          description: 'JavaScript runtime built on Chrome\'s V8 JavaScript engine for building scalable network applications.',
+          descriptionRu: 'JavaScript среда выполнения, построенная на движке V8 Chrome для создания масштабируемых сетевых приложений.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+      },
+      {
+          name: 'Python',
+          description: 'High-level programming language ideal for AI/ML development, data analysis, and backend services.',
+          descriptionRu: 'Высокоуровневый язык программирования, идеальный для разработки AI/ML, анализа данных и бэкенд-сервисов.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+      },
+      {
+          name: 'Solidity',
+          description: 'Object-oriented programming language for implementing smart contracts on various blockchain platforms.',
+          descriptionRu: 'Объектно-ориентированный язык программирования для реализации смарт-контрактов на различных блокчейн-платформах.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg'
+      },
+      {
+          name: 'Rust',
+          description: 'Systems programming language focused on safety, speed, and concurrency, ideal for blockchain development.',
+          descriptionRu: 'Системный язык программирования, сосредоточенный на безопасности, скорости и параллелизме, идеальный для разработки блокчейна.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg'
+      },
+      {
+          name: 'MongoDB',
+          description: 'Document-oriented NoSQL database program, using JSON-like documents with optional schemas.',
+          descriptionRu: 'Документо-ориентированная NoSQL база данных, использующая JSON-подобные документы с опциональными схемами.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+      },
+      {
+          name: 'Redis',
+          description: 'In-memory data structure store, used as a database, cache, and message broker.',
+          descriptionRu: 'Хранилище структур данных в памяти, используемое как база данных, кэш и брокер сообщений.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
+      },
+      {
+          name: 'TensorFlow',
+          description: 'End-to-end open source platform for machine learning and AI model development.',
+          descriptionRu: 'Комплексная платформа с открытым исходным кодом для машинного обучения и разработки AI-моделей.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg'
+      },
+      {
+          name: 'PyTorch',
+          description: 'Open source machine learning library based on the Torch library, used for applications such as computer vision and natural language processing.',
+          descriptionRu: 'Библиотека машинного обучения с открытым исходным кодом, основанная на библиотеке Torch, используемая для компьютерного зрения и обработки естественного языка.',
+          logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg'
+      },
+      {
+          name: 'Ethereum',
+          description: 'Decentralized platform that runs smart contracts and serves as the foundation for decentralized applications.',
+          descriptionRu: 'Децентрализованная платформа, которая выполняет смарт-контракты и служит основой для децентрализованных приложений.',
+          logoUrl: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg'
+      },
+      {
+          name: 'Solana',
+          description: 'High-performance blockchain supporting builders around the world creating crypto apps that scale.',
+          descriptionRu: 'Высокопроизводительный блокчейн, поддерживающий разработчиков по всему миру в создании масштабируемых криптоприложений.',
+          logoUrl: 'https://cryptologos.cc/logos/solana-sol-logo.svg'
+      },
+      {
+          name: 'TON',
+          description: 'The Open Network is a decentralized and open internet platform made up of several components.',
+          descriptionRu: 'The Open Network - это децентрализованная и открытая интернет-платформа, состоящая из нескольких компонентов.',
+          logoUrl: 'https://cryptologos.cc/logos/toncoin-ton-logo.svg'
       }
   ];
   
