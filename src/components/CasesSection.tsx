@@ -5,6 +5,7 @@ import { Card, CardContent, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import { cases, technologies } from '../data/casesData';
+import LazyImage from './LazyImage';
 
 const CasesSection: React.FC = () => {
   const { language } = useLanguage();
@@ -17,7 +18,7 @@ const CasesSection: React.FC = () => {
   const hasMoreCases = visibleCases < cases.length;
 
   return (
-    <section id="cases" className="py-20 bg-gradient-to-br from-background via-muted/30 to-background">
+    <section id="cases" className="py-20 bg-gradient-to-br from-background via-muted/30 to-background below-fold">
       <div className="section-container">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           <span className="en-content">Our Cases</span>
@@ -44,7 +45,7 @@ const CasesSection: React.FC = () => {
                     <Card className="h-full min-h-[180px]">
                       <CardContent className="flex flex-col items-center justify-center p-4 text-center h-full">
                         <div className="w-12 h-12 mb-3 flex items-center justify-center">
-                          <img 
+                          <LazyImage 
                             src={tech.logoUrl} 
                             alt={tech.name}
                             className="max-w-full max-h-full object-contain"

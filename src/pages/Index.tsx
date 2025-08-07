@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 import { LanguageProvider } from '../context/LanguageContext';
 import { Separator } from '../components/ui/separator';
+import SEO from '../components/SEO';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -84,11 +86,13 @@ const Index = () => {
 
   return (
     <LanguageProvider>
+      <SEO />
+      <PerformanceOptimizer />
       <div className="min-h-screen bg-white text-sm">
         <Header />
         <HeroSection enableVanta={enableVantaOnElement} />
         <Separator />
-        <AboutSection />
+        <div className="below-fold"><AboutSection /></div>
         <Separator />
         <ResearchProjectsSection />
         <Separator />

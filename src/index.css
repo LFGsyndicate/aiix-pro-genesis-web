@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Preload critical fonts */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -250,6 +259,12 @@ a.learn-more-btn:hover,
     max-width: 100vw;
   }
   
+  /* Global mobile optimizations */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
   /* Cases section mobile fixes */
   #cases .grid {
     @apply grid-cols-1 gap-4;
@@ -258,6 +273,7 @@ a.learn-more-btn:hover,
   #cases .card {
     @apply w-full;
     max-width: 100%;
+    min-width: 0;
   }
   
   #cases img {
@@ -273,12 +289,14 @@ a.learn-more-btn:hover,
   
   .carousel-item {
     @apply pl-2 basis-full;
+    min-width: 0;
   }
   
   /* Ensure cards don't overflow */
   .card {
     @apply w-full;
     max-width: 100%;
+    min-width: 0;
     box-sizing: border-box;
   }
   
@@ -286,6 +304,7 @@ a.learn-more-btn:hover,
   .btn-primary, .btn-secondary {
     @apply px-4 py-2 text-sm;
     min-height: 44px;
+    word-wrap: break-word;
   }
   
   /* Technology stack cards mobile optimization */
@@ -298,18 +317,35 @@ a.learn-more-btn:hover,
     max-height: 40px;
   }
   
-  /* Cases section mobile fixes */
-  #cases .grid {
-    @apply grid-cols-1 gap-4;
+  /* Text responsive adjustments */
+  h1 { @apply text-xl; }
+  h2 { @apply text-lg; }
+  h3 { @apply text-base; }
+  
+  /* Hero section mobile */
+  .hero-title {
+    @apply text-lg;
   }
   
-  /* Case study cards mobile optimization */
-  #cases .card .grid {
-    @apply grid-cols-1 gap-4;
+  .hero-subtitle {
+    @apply text-sm;
   }
   
-  #cases .badge {
+  /* Badge sizing */
+  .badge {
     @apply text-xs px-2 py-1;
+    font-size: 10px;
+  }
+  
+  /* Form elements mobile optimization */
+  input, textarea, select {
+    @apply text-base;
+    min-height: 44px;
+  }
+  
+  /* Navigation mobile fixes */
+  .nav-menu-text {
+    @apply text-sm;
   }
 }
 
@@ -325,9 +361,13 @@ a.learn-more-btn:hover,
   }
   
   /* Cases section tablet fixes */
-  #cases .card .grid {
+  #cases .grid {
     @apply grid-cols-1 gap-6;
   }
+  
+  /* Text sizing for tablets */
+  h1 { @apply text-2xl; }
+  h2 { @apply text-xl; }
 }
 
 /* Prevent horizontal scroll */
@@ -338,4 +378,33 @@ a.learn-more-btn:hover,
 .container, .section-container {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Performance optimizations */
+.hero-bg {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* Preload critical resources */
+.preload-critical {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Image optimization */
+img {
+  image-rendering: optimizeQuality;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Critical above-the-fold content */
+.above-fold {
+  content-visibility: visible;
+}
+
+/* Below-the-fold content */
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
 }

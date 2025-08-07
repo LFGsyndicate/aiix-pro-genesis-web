@@ -87,10 +87,10 @@ const ApproachSection: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {approachSteps.map((step, index) => (
-            <React.Fragment key={index}>
+            <div key={index}>
               <ApproachStep {...step} />
               {index < approachSteps.length - 1 && <div className="hidden md:block md:col-span-0 border-t-2 border-dashed border-aiix-cyan mt-8"></div>}
-            </React.Fragment>
+            </div>
           ))}
         </div>
       </div>
