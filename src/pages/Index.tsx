@@ -30,6 +30,11 @@ const Index = () => {
     // Load the required scripts dynamically
     const loadScript = (src: string): Promise<void> => {
       return new Promise((resolve, reject) => {
+        const existing = document.querySelector(`script[src="${src}"]`);
+        if (existing) {
+          resolve();
+          return;
+        }
         const script = document.createElement('script');
         script.src = src;
         script.async = true;

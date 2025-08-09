@@ -87,7 +87,7 @@ const PerformanceOptimizer: React.FC = () => {
     
     // Defer non-critical optimizations
     setTimeout(() => {
-      optimizeThirdPartyScripts();
+      // optimizeThirdPartyScripts(); // Avoid duplicate Vanta/Three loading; handled in Index.tsx
       optimizeImages();
     }, 100);
 

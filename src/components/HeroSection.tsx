@@ -25,7 +25,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
     >
       <div 
         id="vanta-bg" 
-        className="absolute inset-0"
+        className="absolute inset-0 bg-aiix-darkblue"
         ref={(el) => {
           if (el && !el.hasAttribute('data-vanta-applied')) {
             el.setAttribute('data-vanta-applied', 'true');
