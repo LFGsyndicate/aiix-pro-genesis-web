@@ -12,25 +12,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const getInitialLanguage = (): Language => {
-    // Check if language preference is saved in localStorage
-    const savedLanguage = localStorage.getItem('preferred-language');
-    if (savedLanguage === 'en' || savedLanguage === 'ru') {
-      return savedLanguage as Language;
+    // 1) URL query param has highest priority (?lang=ru|en)
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    if (urlLang === 'en' || urlLang === 'ru') {
+      return urlLang as Language;
     }
-    
-    // Auto-detect browser/OS language
-    const browserLanguage = navigator.language || navigator.languages?.[0] || 'en';
-    const languageCode = browserLanguage.toLowerCase();
-    
-    // If Russian language detected, return 'ru', otherwise default to 'en'
-    return languageCode.startsWith('ru') ? 'ru' : 'en';
+
+    // 2) Detect from browser/OS language on each load
+    const preferred = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+    const code = preferred.toLowerCase();
+    return code.startsWith('ru') ? 'ru' : 'en';
   };
 
   const [language, setLanguage] = useState<Language>(getInitialLanguage);
 
   const handleSetLanguage = (newLanguage: Language) => {
     setLanguage(newLanguage);
-    localStorage.setItem('preferred-language', newLanguage);
   };
 
   return (
