@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-colors duration-300 ${scrolled ? 'bg-aiix-primary/90 backdrop-blur-md' : ''}`}>
-      <div className="container mx-auto flex justify-between items-center h-[18px] px-[23px] py-[21px]">
+      <div className="container mx-auto flex justify-between items-center h-[60px] px-4 md:px-6">
         <div className="flex items-center md:hidden mr-4">
           <button onClick={() => setLanguage('en')} className={`${language === 'en' ? 'active-language' : 'inactive-language'} text-[10px] header-text`}>
             EN
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = () => {
 
         <a 
           href="#" 
-          className="text-white text-xs font-bold header-text cursor-pointer"
+          className="text-white text-lg md:text-xl font-bold header-text cursor-pointer"
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();

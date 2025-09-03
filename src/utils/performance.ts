@@ -1,7 +1,7 @@
 // Performance optimization utilities
 
 // Debounce function for reducing excessive function calls
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): ((...args: Parameters<T>) => void) => {
@@ -13,7 +13,7 @@ export const debounce = <T extends (...args: any[]) => any>(
 };
 
 // Throttle function for limiting function execution rate
-export const throttle = <T extends (...args: any[]) => any>(
+export const throttle = <T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): ((...args: Parameters<T>) => void) => {

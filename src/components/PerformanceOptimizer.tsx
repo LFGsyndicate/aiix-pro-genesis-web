@@ -13,9 +13,7 @@ const PerformanceOptimizer: React.FC = () => {
 
       // Preload critical images
       const criticalImages = [
-        '/favicon.ico',
-        '/lovable-uploads/expansia.png',
-        '/lovable-uploads/xpnsn.png'
+        '/favicon.ico'
       ];
 
       criticalImages.forEach(src => {

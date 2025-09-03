@@ -13,7 +13,7 @@ const ContactSection: React.FC = () => {
           <span className="ru-content">Готовы к автоматизации и инновациям?</span>
         </h2>
         
-        <p className="text-base text-center max-w-3xl mx-auto mb-10">
+        <p className="text-sm md:text-base text-center max-w-3xl mx-auto mb-10">
           <span className="en-content">
             Let's discuss how AI agents can transform your workflow.
           </span>

@@ -17,7 +17,7 @@ const ApproachStep: React.FC<ApproachStepProps> = ({
 }) => {
   return (
     <div className="flex flex-col items-center text-center">
-      <h3 className="text-xl font-semibold text-aiix-darkblue mb-2">
+      <h3 className="text-lg md:text-xl font-semibold text-aiix-darkblue mb-2">
         <span className="en-content mx-[17px]">{titleEn}</span>
         <span className="ru-content mx-[20px] py-[20px]">{titleRu}</span>
       </h3>

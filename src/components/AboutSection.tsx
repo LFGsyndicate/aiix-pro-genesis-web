@@ -17,7 +17,7 @@ const AboutSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <div className="prose max-w-none">
-              <p className="text-lg mb-6">
+              <p className="text-base md:text-lg mb-6">
                 <span className="en-content">
                   Unlike simple chatbots or basic automation tools, AI agents are sophisticated software entities that 
                   can perceive their environment, make decisions, and take actions to achieve specific goals autonomously.
@@ -29,7 +29,7 @@ const AboutSection: React.FC = () => {
                 </span>
               </p>
               
-              <p className="text-lg mb-6">
+              <p className="text-base md:text-lg mb-6">
                 <span className="en-content">
                   What sets AI agents apart is their ability to learn, adapt, and improve over time. They can maintain memory 
                   of past interactions, plan complex sequences of actions, and leverage various tools to accomplish tasks with minimal human supervision.
@@ -41,7 +41,7 @@ const AboutSection: React.FC = () => {
                 </span>
               </p>
               
-              <p className="text-lg">
+              <p className="text-base md:text-lg">
                 <span className="en-content">
                   At AIix Pro, we develop custom AI agents that are tailored to your specific business needs, seamlessly 
                   integrating with your existing systems to automate complex workflows and deliver tangible results.

@@ -55,6 +55,7 @@
     <meta name="application-name" content="AIix Pro" />
     <meta name="apple-mobile-web-app-title" content="AIix Pro" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     
     <!-- Structured Data -->
@@ -78,6 +79,34 @@
         "@type": "ContactPoint",
         "contactType": "customer service",
         "email": "contact@aiix.pro"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://aiix.pro/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://aiix.pro/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "AI Agent Development",
+      "provider": {
+        "@type": "Organization",
+        "name": "AIix Pro"
+      },
+      "description": "Custom AI agent development for Web3, DeFi, and enterprise solutions. We build intelligent agents that automate tasks, boost efficiency, and drive growth.",
+      "serviceOutput": {
+        "@type": "SoftwareApplication",
+        "name": "Custom AI Agents"
       }
     }
     </script>

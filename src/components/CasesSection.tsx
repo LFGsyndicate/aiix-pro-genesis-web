@@ -42,7 +42,7 @@ const CasesSection: React.FC = () => {
               {technologies.map((tech, index) => (
                 <CarouselItem key={index} className="pl-1 basis-full md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <Card className="h-full min-h-[180px]">
+                    <Card className="h-full min-h-[160px] md:min-h-[180px]">
                       <CardContent className="flex flex-col items-center justify-center p-4 text-center h-full">
                         <div className="w-12 h-12 mb-3 flex items-center justify-center">
                           <LazyImage 
@@ -100,7 +100,7 @@ const CasesSection: React.FC = () => {
                     </Badge>
                   </div>
                   
-                  <CardTitle className="text-lg mb-4 leading-tight">
+                  <CardTitle className="text-base md:text-lg mb-4 leading-tight">
                     <span className="en-content">{caseItem.title}</span>
                     <span className="ru-content">{caseItem.titleRu}</span>
                   </CardTitle>

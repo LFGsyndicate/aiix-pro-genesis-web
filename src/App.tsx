@@ -6,32 +6,11 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Helmet } from "react-helmet-async";
-import React, { useEffect } from 'react';
+import React from 'react';
 
-// Professional ElevenLabs widget integration
 const queryClient = new QueryClient();
 
-// Объявление для TypeScript, чтобы он "понимал" тег виджета
-// eslint-disable-next-line @typescript-eslint/no-namespace
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'elevenlabs-convai': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { 'agent-id'?: string }, HTMLElement>;
-    }
-  }
-}
-
 const App = () => {
-  useEffect(() => {
-    if (!document.querySelector('script[src="https://unpkg.com/@elevenlabs/convai-widget-embed"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-      script.async = true;
-      script.type = 'text/javascript';
-      document.head.appendChild(script);
-    }
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -60,14 +39,12 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <HashRouter>
+          <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </HashRouter>
-          {/* Оригинальный ElevenLabs-виджет — только чистый код */}
-          <elevenlabs-convai agent-id="t1XU82nmJv5bSKHkNnQG"></elevenlabs-convai>
         </TooltipProvider>
       </QueryClientProvider>
     </>

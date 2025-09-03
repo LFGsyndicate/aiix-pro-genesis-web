@@ -35,12 +35,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ enableVanta }) => {
       ></div>
       
       <div className="hero-content container mx-auto px-4 text-center py-20">
-        <h1 className="hero-title font-bold text-white mb-6 max-w-4xl mx-auto">
+        <h1 className="hero-title font-bold text-white mb-6 max-w-4xl mx-auto text-4xl md:text-5xl lg:text-6xl">
           <span className="en-content">Unlock the Power of AI Agents for Your Business</span>
           <span className="ru-content">Раскройте потенциал AI-агентов для вашего бизнеса</span>
         </h1>
         
-        <p className="hero-subtitle text-white/90 mb-10 max-w-3xl mx-auto">
+        <p className="hero-subtitle text-white/90 mb-10 max-w-3xl mx-auto text-lg md:text-xl">
           <span className="en-content">
             Automate tasks, boost efficiency, and drive growth with custom-built AI agents.
           </span>

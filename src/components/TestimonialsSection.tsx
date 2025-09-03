@@ -18,7 +18,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 }) => {
   return (
     <div className="testimonial-card">
-      <blockquote className="text-sm text-gray-600 mb-4">
+      <blockquote className="text-xs md:text-sm text-gray-600 mb-4">
         <span className="en-content">&ldquo;{quoteEn}&rdquo;</span>
         <span className="ru-content">&ldquo;{quoteRu}&rdquo;</span>
       </blockquote>

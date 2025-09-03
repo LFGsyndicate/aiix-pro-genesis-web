@@ -1,39 +1,9 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Homepage with language alternatives -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aiix.pro/</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aiix.pro/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://aiix.pro/?lang=ru" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiix.pro/" />
-  </url>
-  
-  <!-- English version -->
-  <url>
-    <loc>https://aiix.pro/?lang=en</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Russian version -->
-  <url>
-    <loc>https://aiix.pro/?lang=ru</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://aiix.pro/privacy.pdf</loc>
-    <lastmod>2025-01-06</lastmod>
+    <lastmod>2025-08-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>1.0</priority>
   </url>
 </urlset>

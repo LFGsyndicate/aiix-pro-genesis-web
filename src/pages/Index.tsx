@@ -16,15 +16,39 @@ import FaqSection from '../components/FaqSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
+// Define interfaces for the external libraries to avoid using 'any'
+interface VantaEffect {
+  destroy: () => void;
+}
+
+interface VantaHaloOptions {
+  el: HTMLElement;
+  mouseControls: boolean;
+  touchControls: boolean;
+  gyroControls: boolean;
+  minHeight: number;
+  minWidth: number;
+  backgroundColor: number;
+  baseColor: number;
+  amplitudeFactor: number;
+  size: number;
+  xOffset: number;
+  yOffset: number;
+}
+
+interface Vanta {
+  HALO: (options: VantaHaloOptions) => VantaEffect;
+}
+
 declare global {
   interface Window {
-    VANTA: any;
-    THREE: any;
+    VANTA: Vanta;
+    THREE: unknown; // Use 'unknown' as a safer alternative to 'any'
   }
 }
 
 const Index = () => {
-  const vantaEffect = useRef<any>(null);
+  const vantaEffect = useRef<VantaEffect | null>(null);
 
   useEffect(() => {
     // Load the required scripts dynamically

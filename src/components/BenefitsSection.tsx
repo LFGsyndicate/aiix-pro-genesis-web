@@ -14,7 +14,7 @@ const BenefitCard: React.FC<BenefitProps> = ({ icon, titleEn, titleRu, descripti
   return (
     <div className="benefit-card hover:-translate-y-1">
       <div className="text-aiix-cyan mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-aiix-darkblue mb-2">
+      <h3 className="text-lg md:text-xl font-semibold text-aiix-darkblue mb-2">
         <span className="en-content">{titleEn}</span>
         <span className="ru-content">{titleRu}</span>
       </h3>
