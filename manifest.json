@@ -1,0 +1,24 @@
+{
+  "name": "AIix Pro - AI Agent Development Company",
+  "short_name": "AIix Pro",
+  "description": "Leading AI agent development company specializing in custom AI solutions and Web3 integration",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": [
+    "business",
+    "productivity",
+    "developer"
+  ],
+  "lang": "en",
+  "dir": "ltr"
+}
