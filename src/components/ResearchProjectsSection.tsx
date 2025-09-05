@@ -33,7 +33,7 @@ const projects: ResearchProject[] = [
     description: 'A comprehensive industry analysis of 700 real-world generative AI applications, providing insights into how this technology is transforming businesses across sectors.',
     descriptionRu: 'Комплексный отраслевой анализ 700 реальных приложений генеративного ИИ, предоставляющий информацию о том, как эта технология трансформирует бизнес в различных секторах.',
     imageUrl: '/lovable-uploads/5d6ece40-5024-4b03-8e74-7bbce2de2499.png',
-    link: 'https://lfgsyndicate.github.io/700-ai-startup-ideas'
+    link: 'https://700-ai-startup-ideas.vercel.app/'
   },
   {
     id: 'dtn',
